@@ -8,7 +8,7 @@ class UserController {
 
     registerUser(userData) {
         return this.userModel.createUser(userData);
-    }
+    } 
 
     loginUser(username, password) {
         return this.userModel.findUserByUsernameAndPassword(username, password);
