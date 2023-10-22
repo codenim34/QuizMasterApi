@@ -12,5 +12,7 @@ class AdminController {
     loginAdmin(username, password) {
         return this.adminModel.findAdminByUsernameAndPassword(username, password);
     }
+
+
 }
 module.exports = AdminController;

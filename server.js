@@ -3,6 +3,8 @@ const UserController = require('./Controller/userController');
 const UserView = require('./View/userView');
 const AdminController= require('./Controller/adminController');
 const AdminView =require('./View/adminView');
+const  QuizView = require('./View/quizView');
+const {addQuiz} = require("./Model/quizModel");
 
 const server = http.createServer((req, res) => {
     const userController = new UserController();
@@ -12,6 +14,7 @@ const server = http.createServer((req, res) => {
 
     const adminController = new AdminController();
     const adminView = new AdminView();
+    const quizView= new QuizView();
 
 
     if (req.method === 'POST' && req.url === '/register') {
@@ -77,7 +80,7 @@ const server = http.createServer((req, res) => {
                  const {username, password} = JSON.parse(data);
                  const admin = adminController.loginAdmin(username,password);
                  if(admin){
-                     adminView.sendSuccessResponse(res,"login successful",admin);
+                     adminView.sendLogInSuccessResponse(res,"login successful",admin);
                  }else{
                      adminView.sendErrorResponse(res,401,'Authentication failed');
                  }
@@ -86,6 +89,32 @@ const server = http.createServer((req, res) => {
                  adminView.sendErrorResponse(res,400,'Invalid');
              }
          })
+    }else if( req.method==="POST" && req.url==="/admin/addQuiz"){
+         let data="";
+         req.on('data',(chunk)=>{
+             data+=chunk;
+         });
+
+         req.on('end',()=>{
+             const {question,option} = JSON.parse(data);
+            // const cookies= req.headers.cookie;
+
+
+            try{
+
+                const addedQuiz= addQuiz(question, option);
+                quizView.sendSuccessResponse(res,"added successfully",addedQuiz);
+            } catch (error){
+                quizView.sendErrorResponse(res,400,"invalid data");
+            }
+
+
+
+            // console.log(cookies);
+
+
+         })
+
     }
 
 
@@ -97,3 +126,4 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
     console.log('Server is listening on port 3000');
 });
+
