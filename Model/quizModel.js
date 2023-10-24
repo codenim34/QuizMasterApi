@@ -17,16 +17,16 @@ const saveQuizzes = (quizzes) => {
 };
 
 class Quiz {
-    constructor(question, options,correct_ans,id) {
+    constructor(question, options,correctAnswer,questionID) {
         this.question = question;
         this.options = options;
-        this.correct_ans= correct_ans;
-        this.id=id;
+        this.correctAnswer= correctAnswer;
+        this.questionID= questionID;
     }
 }
 
-const addQuiz = (question, options,correct_ans,id) => {
-    const quiz = new Quiz(question, options,correct_ans,id);
+const addQuiz = (question, options,correctAnswer,questionID) => {
+    const quiz = new Quiz(question, options,correctAnswer,questionID);
     const quizzes = loadQuizzes();
     quizzes.push(quiz);
     saveQuizzes(quizzes);

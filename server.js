@@ -3,8 +3,10 @@ const UserController = require('./Controller/userController');
 const UserView = require('./View/userView');
 const AdminController= require('./Controller/adminController');
 const AdminView =require('./View/adminView');
+
 const  QuizView = require('./View/quizView');
 const {addQuiz, getAllQuizzes} = require("./Model/quizModel");
+
 
 const server = http.createServer((req, res) => {
     const userController = new UserController();
@@ -99,13 +101,19 @@ const server = http.createServer((req, res) => {
          });
 
          req.on('end',()=>{
-             const {question,option,correct_ans,id} = JSON.parse(data);
+             const {question,options,correctAnswer,questionID} = JSON.parse(data);
             const token= req.headers.authorization;
 
             try{
 
-                const addedQuiz= addQuiz(question, option,correct_ans,id);
-                quizView.sendSuccessResponse(res,"added successfully",addedQuiz);
+                const addedQuiz= addQuiz(question, options,correctAnswer,questionID);
+                const quizResponse = {
+                    question: addedQuiz.question,
+                    options: addedQuiz.options,
+                    questionID: addedQuiz.questionID
+                    // You can omit the correctAnswer property here
+                };
+                quizView.sendSuccessResponse(res,"added successfully",quizResponse);
             } catch (error){
                 console.log(error);
                 quizView.sendErrorResponse(res,400,"invalid data");
@@ -122,7 +130,7 @@ const server = http.createServer((req, res) => {
 
         try{
            const data= getAllQuizzes();
-           delete data.correct_ans;
+           delete data.correctAnswer;
            quizView.sendSuccessResponse(res,"fetched successfully",data);
 
         }catch (error){
