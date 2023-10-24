@@ -1,10 +1,67 @@
 [
   {
-    "question": "What is your name?",
-    "options": "a. abul, b. kobul, c. nobul ,d. choto nafi"
-  },
-  {
-    "question": "What is your name?",
-    "options": "a. abul, b. kobul, c. nobul ,d. choto nafi"
+    "quiz": [
+      {
+        "question": "1. What is the capital of France?",
+        "options": [
+          "A. Berlin",
+          "B. London",
+          "C. Paris",
+          "D. Rome"
+        ],
+        "correct_answer": "C. Paris"
+        
+      },
+      {
+        "question": "2. Which continent has the most countries?",
+        "options": [
+          "A. Asia",
+          "B. Africa",
+          "C. Europe",
+          "D. Americas"
+        ],
+        "correct_answer": "B. Africa"
+      },
+      {
+        "question": "3. Which ocean surrounds the most land?",
+        "options": [
+          "A. Arctic Ocean",
+          "B. Pacific Ocean",
+          "C. Indian Ocean",
+          "D. Atlantic Ocean"
+        ],
+        "correct_answer": "A. Arctic Ocean"
+      },
+      {
+        "question": "4. Which is the only satellite naturally occurring in our solar system?",
+        "options": [
+          "A. Jupiter",
+          "B. Earth",
+          "C. Mars",
+          "D. Pluto"
+        ],
+        "correct_answer": "B. Earth"
+      },
+      {
+        "question": "5. What is the name of the planet where Earth's atmosphere is most similar?",
+        "options": [
+          "A. Mercury",
+          "B. Venus",
+          "C. Mars",
+          "D. Jupiter"
+        ],
+        "correct_answer": "B. Venus"
+      },
+      {
+        "question": "6. What is the densest known solid material in the universe?",
+        "options": [
+          "A. Diamond",
+          "B. Gold",
+          "C. Lead",
+          "D. Tungsten"
+        ],
+        "correct_answer": "A. Diamond"
+      }
+    ]
   }
 ]

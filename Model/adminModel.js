@@ -40,6 +40,11 @@ class adminModel {
         return this.admins.find((admin) => admin.username === username && admin.password === password);
     }
 
+    generateToken(username){
+
+    }
+
+
 }
 
 module.exports = adminModel;
