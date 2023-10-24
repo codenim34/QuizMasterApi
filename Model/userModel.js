@@ -1,6 +1,5 @@
 // userModel.js
 const fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
 
 class UserModel {
     constructor() {
@@ -21,7 +20,7 @@ class UserModel {
     }
 
     createUser(user) {
-        user.id = uuidv4();
+
         this.users.push(user);
         this.saveUsers();
         return user;

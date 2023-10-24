@@ -1,12 +1,20 @@
 [
+  
   {
-    "name": "Tasnim Ashraf",
-    "username": "tasnim1834",
-    "password": "password12"
+    "username": "admin1",
+    "password": "password1"
   },
   {
-    "name": "Imtiaz Risat",
-    "username": "imtiazrisat",
-    "password": "pass_1850"
+    "username": "admin2",
+    "password": "password2"
+  },
+  {
+    "username": "khandakarShakib",
+    "password": "passwordking"
+  },
+  {
+    "username": "tassnim",
+    "password": "everhigh"
+
   }
 ]
