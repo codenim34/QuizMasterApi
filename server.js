@@ -3,7 +3,7 @@ const UserController = require('./Controller/userController');
 const UserView = require('./View/userView');
 const AdminController= require('./Controller/adminController');
 const AdminView =require('./View/adminView');
-const  QuizView = require('./View/quizView');
+const QuizView = require('./View/quizView');
 const {addQuiz} = require("./Model/quizModel");
 
 const server = http.createServer((req, res) => {
