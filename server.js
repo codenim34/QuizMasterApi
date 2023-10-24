@@ -27,6 +27,7 @@ const server = http.createServer((req, res) => {
             try {
                 const userData = JSON.parse(data);
                 const registeredUser = userController.registerUser(userData);
+                delete  registeredUser.password;
                 userView.sendSuccessResponse(res, 'User registered successfully', registeredUser);
             } catch (error) {
                 userView.sendErrorResponse(res, 400, 'Invalid data');
@@ -98,12 +99,12 @@ const server = http.createServer((req, res) => {
          });
 
          req.on('end',()=>{
-             const {question,option} = JSON.parse(data);
+             const {question,option,correct_ans,id} = JSON.parse(data);
             const token= req.headers.authorization;
 
             try{
 
-                const addedQuiz= addQuiz(question, option);
+                const addedQuiz= addQuiz(question, option,correct_ans,id);
                 quizView.sendSuccessResponse(res,"added successfully",addedQuiz);
             } catch (error){
                 console.log(error);
@@ -121,6 +122,7 @@ const server = http.createServer((req, res) => {
 
         try{
            const data= getAllQuizzes();
+           delete data.correct_ans;
            quizView.sendSuccessResponse(res,"fetched successfully",data);
 
         }catch (error){

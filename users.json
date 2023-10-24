@@ -18,5 +18,17 @@
     "username": "tasnim1834",
     "password": "password12",
     "id": "8e966a40-1eca-48ac-897f-577dc8e2bf88"
+  },
+  {
+    "name": "Taki Imtiaz",
+    "username": "takitalha123",
+    "password": "password123",
+    "studentID": "123456789"
+  },
+  {
+    "name": "Imtiaz Risat",
+    "username": "meghnaimtiaz",
+    "password": "password1234",
+    "studentID": "210042167"
   }
 ]

@@ -10,7 +10,6 @@
           "D. Rome"
         ],
         "correct_answer": "C. Paris"
-        
       },
       {
         "question": "2. Which continent has the most countries?",
@@ -63,5 +62,34 @@
         "correct_answer": "A. Diamond"
       }
     ]
+  },
+  {
+    "question": "3. Which ocean surrounds the most land?"
+  },
+  {
+    "question": "3. Which ocean surrounds the most land?"
+  },
+  {
+    "question": "3. Which ocean surrounds the most land?"
+  },
+  {
+    "question": "3. Which ocean surrounds the most land?",
+    "options": [
+      "A. Arctic Ocean",
+      "B. Pacific Ocean",
+      "C. Indian Ocean",
+      "D. Atlantic Ocean"
+    ]
+  },
+  {
+    "question": "3. Which ocean surrounds the most land?",
+    "options": [
+      "A. Arctic Ocean",
+      "B. Pacific Ocean",
+      "C. Indian Ocean",
+      "D. Atlantic Ocean"
+    ],
+    "correct_ans": "A. Arctic Ocean",
+    "id": 101
   }
 ]
