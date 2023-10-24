@@ -13,4 +13,5 @@ class QuizView{
     }
 
 }
+
 module.exports=QuizView;
