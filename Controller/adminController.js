@@ -1,24 +1,46 @@
-// adminController.js
+// AdminController.js
 
-const adminModel = require('../Model/adminModel');
+const AdminModel = require('../Model/adminModel');
 
 class AdminController {
     constructor() {
-        this.adminModel = new adminModel();
+        this.adminModel = new AdminModel();
     }
 
-    registerAdmin(userData) {
-        const pass= userData.password;
-        const user= userData.username;
+    registerAdmin(data) {
+        try {
+            const adminData = JSON.parse(data);
 
+            if (!adminData.username || !adminData.password) {
+                throw new Error('Invalid data: Username and password are required.');
+            }
 
-        return this.adminModel.createAdmin(userData);
+            const registeredAdmin = this.adminModel.createAdmin(adminData);
+            delete registeredAdmin.password;
+
+            return registeredAdmin;
+        } catch (error) {
+            console.error(error);
+            throw new Error(`Invalid data: ${error.message}`);
+        }
     }
 
-    loginAdmin(username, password) {
-        return this.adminModel.findAdminByUsernameAndPassword(username, password);
-    }
+    loginAdmin(data) {
+        try {
+            const { username, password } = JSON.parse(data);
 
+            if (!username || !password) {
+                throw new Error('Invalid data: Username and password are required.');
+            }
+
+            const admin = this.adminModel.findAdminByUsernameAndPassword(username, password);
+
+            return admin;
+        } catch (error) {
+            console.error(error);
+            throw new Error(`Invalid data: ${error.message}`);
+        }
+    }
 }
 
 module.exports = AdminController;

@@ -1,11 +1,13 @@
+// AdminModel.js
+
 const fs = require('fs');
 
-class adminModel {
+class AdminModel {
     constructor() {
-        this.admins = this.loadAdmin();
+        this.admins = this.loadAdmins();
     }
 
-    loadAdmin() {
+    loadAdmins() {
         try {
             const adminsData = fs.readFileSync('admins.json', 'utf8');
             return JSON.parse(adminsData);
@@ -18,9 +20,12 @@ class adminModel {
         fs.writeFileSync('admins.json', JSON.stringify(this.admins, null, 2));
     }
 
-    // function
-
     createAdmin(admin) {
+        const existingAdmin = this.admins.find((a) => a.username === admin.username);
+        if (existingAdmin) {
+            throw new Error('Username is already taken. Please choose another one.');
+        }
+
         this.admins.push(admin);
         this.saveAdmins();
         return admin;
@@ -29,10 +34,6 @@ class adminModel {
     findAdminByUsernameAndPassword(username, password) {
         return this.admins.find((admin) => admin.username === username && admin.password === password);
     }
-
-    //generateToken(username){}
-
-
 }
 
-module.exports = adminModel;
+module.exports = AdminModel;

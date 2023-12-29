@@ -56,30 +56,30 @@ const server = http.createServer((req, res) => {
         });
     } else if (req.method === 'POST' && pathname === '/admin/register') {
         let data = '';
+    
         req.on('data', (chunk) => {
             data += chunk;
         });
-
+    
         req.on('end', () => {
             try {
-                const adminData = JSON.parse(data);
-                const registeredAdmin = adminController.registerAdmin(adminData);
-                delete adminData.password;
-                adminView.sendSuccessResponse(res, 'Registered admin successfully', adminData);
+                const registeredAdmin = adminController.registerAdmin(data);
+                adminView.sendSuccessResponse(res, 'Admin registered successfully', registeredAdmin);
             } catch (error) {
-                adminView.sendErrorResponse(res, 400, 'Invalid data');
+                adminView.sendErrorResponse(res, 400, error.message);
             }
         });
     } else if (req.method === 'POST' && pathname === '/admin/login') {
         let data = '';
+    
         req.on('data', (chunk) => {
             data += chunk;
         });
-
+    
         req.on('end', () => {
             try {
-                const { username, password } = JSON.parse(data);
-                const admin = adminController.loginAdmin(username, password);
+                const admin = adminController.loginAdmin(data);
+    
                 if (admin) {
                     delete admin.password;
                     adminView.sendLogInSuccessResponse(res, 'Login successful', { admin, access_token: 'MyVerySecretAccessToken' });
@@ -87,7 +87,7 @@ const server = http.createServer((req, res) => {
                     adminView.sendErrorResponse(res, 401, 'Authentication failed');
                 }
             } catch (error) {
-                adminView.sendErrorResponse(res, 400, 'Invalid data');
+                adminView.sendErrorResponse(res, 400, error.message);
             }
         });
     } else if (req.method === 'POST' && pathname === '/admin/addQuiz') {
