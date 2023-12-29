@@ -118,5 +118,17 @@
     "options": "a. Cumilla, b. Narayangonj, c. Chittagong, d. Dhaka",
     "correctAnswer": "d",
     "questionID": "38"
+  },
+  {
+    "question": "What is the capital of France?",
+    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
+    "correctAnswer": "c",
+    "questionID": "3"
+  },
+  {
+    "question": "What is the capital of France?",
+    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
+    "correctAnswer": "c",
+    "questionID": "3"
   }
 ]

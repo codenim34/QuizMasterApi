@@ -1,17 +1,13 @@
-// adminView.js
+// AdminView.js
 
-class AdminView{
-    sendSuccessResponse(res, message, data) {
+class AdminView {
+    sendLogInSuccessResponse(res, message, data) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ message, data }));
     }
 
-    sendLogInSuccessResponse(res,message,data){
-        const token = "jun7h7y77b6b6t";
-        res.writeHead(200, {
-            'Content-Type': 'application/json',
-            'Set-Cookie': `access_token=${token}`
-        });
+    sendSuccessResponse(res, message, data) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ message, data }));
     }
 
@@ -21,4 +17,4 @@ class AdminView{
     }
 }
 
-module.exports =AdminView;
+module.exports = AdminView;
