@@ -1,4 +1,5 @@
-// userController.js
+// userController.
+
 const UserModel = require('../Model/userModel');
 
 class UserController {
