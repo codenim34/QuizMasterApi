@@ -19,6 +19,8 @@ const server = http.createServer((req, res) => {
     const { pathname } = url.parse(req.url);
     const queryParams = querystring.parse(url.parse(req.url).query);
 
+    
+
     if (req.method === 'POST' && pathname === '/register') {
         let data = '';
     
@@ -56,66 +58,69 @@ const server = http.createServer((req, res) => {
         });
     } else if (req.method === 'POST' && pathname === '/admin/register') {
         let data = '';
+    
         req.on('data', (chunk) => {
             data += chunk;
         });
-
+    
         req.on('end', () => {
             try {
-                const adminData = JSON.parse(data);
-                const registeredAdmin = adminController.registerAdmin(adminData);
-                delete adminData.password;
-                adminView.sendSuccessResponse(res, 'Registered admin successfully', adminData);
+                const registeredAdmin = adminController.registerAdmin(data);
+                adminView.sendSuccessResponse(res, 'Admin registered successfully', registeredAdmin);
             } catch (error) {
-                adminView.sendErrorResponse(res, 400, 'Invalid data');
+                adminView.sendErrorResponse(res, 400, error.message);
             }
         });
     } else if (req.method === 'POST' && pathname === '/admin/login') {
         let data = '';
+    
         req.on('data', (chunk) => {
             data += chunk;
         });
-
+    
         req.on('end', () => {
             try {
-                const { username, password } = JSON.parse(data);
-                const admin = adminController.loginAdmin(username, password);
-                if (admin) {
+                const loginResult = adminController.loginAdmin(data);
+    
+                if (loginResult) {
+                    const { admin, accessToken } = loginResult;
                     delete admin.password;
-                    adminView.sendLogInSuccessResponse(res, 'Login successful', { admin, access_token: 'MyVerySecretAccessToken' });
+                    adminView.sendLogInSuccessResponse(res, 'Login successful', { admin, access_token: accessToken });
                 } else {
                     adminView.sendErrorResponse(res, 401, 'Authentication failed');
                 }
             } catch (error) {
-                adminView.sendErrorResponse(res, 400, 'Invalid data');
+                adminView.sendErrorResponse(res, 400, error.message);
             }
         });
     } else if (req.method === 'POST' && pathname === '/admin/addQuiz') {
-        let data = '';
-        req.on('data', (chunk) => {
-            data += chunk;
+        authenticateAdmin(req, res, () => {
+            let data = '';
+            req.on('data', (chunk) => {
+                data += chunk;
+            });
+    
+            req.on('end', () => {
+                const { question, options, correctAnswer, questionID } = JSON.parse(data);
+                const token = req.headers.authorization;
+    
+                try {
+                    const addedQuiz = addQuiz(question, options, correctAnswer, questionID);
+                    const quizResponse = {
+                        question: addedQuiz.question,
+                        options: addedQuiz.options,
+                        questionID: addedQuiz.questionID,
+                    };
+                    quizView.sendSuccessResponse(res, 'Quiz added successfully', quizResponse);
+                } catch (error) {
+                    console.error(error);
+                    quizView.sendErrorResponse(res, 400, 'Invalid data');
+                }
+    
+    
+             })
+    
         });
-
-        req.on('end', () => {
-            const { question, options, correctAnswer, questionID } = JSON.parse(data);
-            const token = req.headers.authorization;
-
-            try {
-                const addedQuiz = addQuiz(question, options, correctAnswer, questionID);
-                const quizResponse = {
-                    question: addedQuiz.question,
-                    options: addedQuiz.options,
-                    questionID: addedQuiz.questionID,
-                };
-                quizView.sendSuccessResponse(res, 'Quiz added successfully', quizResponse);
-            } catch (error) {
-                console.error(error);
-                quizView.sendErrorResponse(res, 400, 'Invalid data');
-            }
-
-
-         })
-
     }else if(req.method==="GET" && req.url==="/user/takeQuiz"){
 
         try{
@@ -153,12 +158,36 @@ const server = http.createServer((req, res) => {
 
         userView.sendErrorResponse(res, 404, 'Not Found');
     }
+
+
+    // Middleware for Admin-Only Routes
+    function authenticateAdmin(req, res, next) {
+    const token = req.headers.authorization;
+
+    if (!token) {
+        adminView.sendErrorResponse(res, 401, 'Unauthorized: Access token missing.');
+        return;
+    }
+
+    const admin = adminController.findAdminByAccessToken(token);
+
+    if (!admin) {
+        adminView.sendErrorResponse(res, 401, 'Unauthorized: Invalid access token.');
+        return;
+    }
+
+    // Attach the admin object to the request for use in subsequent route handlers
+    req.admin = admin;
+    next();
+};
 });
 
 const PORT = 3000;
 server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
+
+
 
 
 
