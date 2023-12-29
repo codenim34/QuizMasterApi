@@ -46,6 +46,10 @@ class AdminController {
             throw new Error(`Invalid data: ${error.message}`);
         }
     }
+
+    findAdminByAccessToken(accessToken) {
+        return this.adminModel.findAdminByAccessToken(accessToken);
+    }
 }
 
 module.exports = AdminController;
