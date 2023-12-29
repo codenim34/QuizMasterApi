@@ -1,4 +1,5 @@
 // userModel.js
+
 const fs = require('fs');
 
 class UserModel {

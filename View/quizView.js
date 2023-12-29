@@ -1,4 +1,4 @@
-
+// quizView.js
 
 class QuizView{
 
