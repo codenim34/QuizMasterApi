@@ -5,7 +5,7 @@ const AdminController= require('./Controller/adminController');
 const AdminView =require('./View/adminView');
 
 const  QuizView = require('./View/quizView');
-const {addQuiz, getAllQuizzes} = require("./Model/quizModel");
+const {addQuiz, getAllQuizzes, takeQuiz} = require("./Model/quizModel");
 
 
 const server = http.createServer((req, res) => {
@@ -130,17 +130,35 @@ const server = http.createServer((req, res) => {
 
         try{
            const data= getAllQuizzes();
-           delete data.correctAnswer;
+
+
            quizView.sendSuccessResponse(res,"fetched successfully",data);
 
         }catch (error){
             quizView.sendErrorResponse(res,401,"No quiz is stored");
         }
 
+    }else if(req.method === "POST" && req.url==="/user/submitQuiz"){
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', () => {
+
+
+            let userResponses;
+            try {
+                userResponses = JSON.parse(body);
+                const result = takeQuiz(userResponses);
+                res.writeHead(200, {'Content-Type': 'application/json'});
+                res.end(JSON.stringify(result));
+            } catch (error) {
+                res.writeHead(400, {'Content-Type': 'application/json'});
+                res.end(JSON.stringify({error: 'Invalid JSON in request body'}));
+
+            }
+        });
     }
-
-
-
     else {
         userView.sendErrorResponse(res, 404, 'Not Found');
     }
@@ -149,4 +167,8 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
     console.log('Server is listening on port 3000');
 });
+
+
+
+
 

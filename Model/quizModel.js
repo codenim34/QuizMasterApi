@@ -32,10 +32,46 @@ const addQuiz = (question, options,correctAnswer,questionID) => {
     saveQuizzes(quizzes);
     return quiz;
 };
+const getAllQuizzes = () => {
+    try {
+        const data = fs.readFileSync('quiz.json', 'utf8');
+        const quizzes = JSON.parse(data);
 
-const getAllQuizzes = () => loadQuizzes();
+        const simplifiedQuizzes = [];
+        let serialID = 1;
+        for (const quiz of quizzes) {
+            simplifiedQuizzes.push({
+                serialID: serialID,
+                question: quiz.question,
+                options: quiz.options,
+                questionID: quiz.questionID,
+            });
+            serialID++;
+        }
+
+        return simplifiedQuizzes;
+    } catch (err) {
+        return [];
+    }
+};
+
+
+const takeQuiz = (userResponses) => {
+    const quizzes = loadQuizzes();
+    let score = 0;
+
+    userResponses.forEach(response => {
+        const quiz = quizzes.find(q => q.questionID === response.questionID);
+        if (quiz && response.userAnswer === quiz.correctAnswer) {
+            score++;
+        }
+    });
+
+    return { score };
+};
 
 module.exports = {
     addQuiz,
     getAllQuizzes,
+    takeQuiz,
 };

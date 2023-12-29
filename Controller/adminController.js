@@ -6,6 +6,10 @@ class AdminController {
     }
 
     registerAdmin(userData) {
+        const pass= userData.password;
+        const user= userData.username;
+
+
         return this.adminModel.createAdmin(userData);
     }
 

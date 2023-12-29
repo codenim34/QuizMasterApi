@@ -3,268 +3,120 @@
     "question": "What is the SI unit of force?",
     "options": "a. Newton, b. Watt, c. Joule, d. Volt",
     "correctAnswer": "a",
-    "questionID": "8s2f9x1y3z"
+    "questionID": "1"
   },
   {
     "question": "Which of the following is a vector quantity?",
     "options": "a. Speed, b. Mass, c. Distance, d. Acceleration",
     "correctAnswer": "d",
-    "questionID": "7t4r6e2w9q"
+    "questionID": "2"
   },
   {
     "question": "What is the boiling point of water in Celsius?",
     "options": "a. 100°C, b. 0°C, c. 212°F, d. 273 K",
     "correctAnswer": "a",
-    "questionID": "6u8g3i5o1p"
+    "questionID": "3"
   },
   {
     "question": "Which law of motion states that 'for every action, there is an equal and opposite reaction'?",
     "options": "a. Newton's First Law, b. Newton's Second Law, c. Newton's Third Law, d. Archimedes' Principle",
     "correctAnswer": "c",
-    "questionID": "5h4d2j1k7l"
+    "questionID": "4"
   },
   {
     "question": "What is the fundamental particle in an atom with a positive charge?",
     "options": "a. Electron, b. Proton, c. Neutron, d. Photon",
     "correctAnswer": "b",
-    "questionID": "4f2d9r1a8g"
+    "questionID": "5"
   },
   {
     "question": "Which color of light has the shortest wavelength?",
     "options": "a. Red, b. Blue, c. Green, d. Yellow",
     "correctAnswer": "b",
-    "questionID": "3g7t8h2w6e"
+    "questionID": "6"
   },
   {
     "question": "What is the unit of electric current?",
     "options": "a. Ampere, b. Volt, c. Ohm, d. Watt",
     "correctAnswer": "a",
-    "questionID": "2w5r7e1q4p"
+    "questionID": "7"
   },
   {
     "question": "What is the law of conservation of energy?",
     "options": "a. Energy cannot be created, b. Energy cannot be destroyed, c. Energy can change forms, d. All of the above",
     "correctAnswer": "d",
-    "questionID": "9r4e2d8w7v"
+    "questionID": "8"
   },
   {
     "question": "Which planet is known as the 'Red Planet'?",
     "options": "a. Venus, b. Jupiter, c. Mars, d. Saturn",
     "correctAnswer": "c",
-    "questionID": "1a3s5d7f9g"
+    "questionID": "9"
   },
   {
-    "question": "What is the formula for the acceleration due to gravity on Earth?",
-    "options": "a. 9.8 m/s^2, b. 3.14 m/s^2, c. 6.67 x 10^-11 Nm^2/kg^2, d. 3 x 10^8 m/s",
-    "correctAnswer": "a",
-    "questionID": "5e8d3c1v2b"
-  },
-  {
-    "question": "Which type of electromagnetic wave has the shortest wavelength?",
-    "options": "a. Radio waves, b. Microwaves, c. X-rays, d. Infrared radiation",
-    "correctAnswer": "c",
-    "questionID": "7s4d6f9h2k"
-  },
-  {
-    "question": "What is the process by which plants make their own food using sunlight?",
-    "options": "a. Respiration, b. Photosynthesis, c. Transpiration, d. Fermentation",
+    "question": "What is the capital of Spain?",
+    "options": "a. Barcelona, b. Madrid, c. Valencia, d. Seville",
     "correctAnswer": "b",
-    "questionID": "1m3n5o7p9q"
+    "questionID": "10"
   },
   {
-    "question": "Which of the following is a renewable source of energy?",
-    "options": "a. Natural gas, b. Coal, c. Solar power, d. Nuclear power",
+    "question": "What is the currency of the United Kingdom?",
+    "options": "a. Dollar, b. Euro, c. Pound, d. Yen",
     "correctAnswer": "c",
-    "questionID": "8x2c7v3b6n"
+    "questionID": "11"
   },
   {
-    "question": "What is the law of reflection of light?",
-    "options": "a. Light bends when it passes through a medium, b. Light is absorbed by objects, c. Angle of incidence equals angle of reflection, d. Light travels in straight lines only",
+    "question": "What is the highest waterfall in the world?",
+    "options": "a. Niagara Falls, b. Victoria Falls, c. Angel Falls, d. Iguazu Falls",
     "correctAnswer": "c",
-    "questionID": "4s8h6j2k3l"
+    "questionID": "12"
   },
   {
-    "question": "Which particle is responsible for carrying an electric charge in an atom?",
-    "options": "a. Electron, b. Proton, c. Neutron, d. Photon",
-    "correctAnswer": "a",
-    "questionID": "2f5g7a1r9e"
-  },
-  {
-    "question": "What is the unit of power in the International System of Units (SI)?",
-    "options": "a. Watt, b. Volt, c. Ampere, d. Joule",
-    "correctAnswer": "a",
-    "questionID": "9h3w7e1r4t"
-  },
-  {
-    "question": "In which state of matter do particles have the most kinetic energy?",
-    "options": "a. Solid, b. Liquid, c. Gas, d. Plasma",
-    "correctAnswer": "d",
-    "questionID": "7g4t6r2e9v"
-  },
-  {
-    "question": "What is the principle of conservation of momentum?",
-    "options": "a. Momentum is never conserved, b. Momentum is conserved in all collisions, c. Momentum is conserved in elastic collisions, d. Momentum is conserved in inelastic collisions",
-    "correctAnswer": "d",
-    "questionID": "5v8c3d1s2f"
-  },
-  {
-    "question": "Which of the following is a unit of electric resistance?",
-    "options": "a. Ampere, b. Volt, c. Ohm, d. Joule",
+    "question": "What is the chemical symbol for silver?",
+    "options": "a. Si, b. S, c. Ag, d. Au",
     "correctAnswer": "c",
-    "questionID": "3s7d4f2g9h"
+    "questionID": "31"
   },
   {
-    "question": "What is the speed of light in a vacuum?",
-    "options": "a. 300,000 m/s, b. 186,282 miles/s, c. 3 x 10^8 m/s, d. 9.8 m/s^2",
+    "question": "What is the square root of 144?",
+    "options": "a. 10, b. 11, c. 12, d. 13",
     "correctAnswer": "c",
-    "questionID": "1s8d2g6f5h"
+    "questionID": "32"
   },
   {
-    "question": "Which law of thermodynamics states that energy cannot be created or destroyed, only transferred or converted?",
-    "options": "a. First Law, b. Second Law, c. Third Law, d. Zeroth Law",
-    "correctAnswer": "a",
-    "questionID": "4a7s9d3f6g"
-  },
-  {
-    "question": "What is the SI unit of electric potential difference?",
-    "options": "a. Ampere, b. Ohm, c. Volt, d. Joule",
+    "question": "What is the capital of Italy?",
+    "options": "a. Venice, b. Milan, c. Rome, d. Naples",
     "correctAnswer": "c",
-    "questionID": "7a2s5d9f8g"
+    "questionID": "33"
   },
   {
-    "question": "What is the force of gravity on an object with a mass of 10 kg?",
-    "options": "a. 100 N, b. 10 N, c. 9.8 N, d. 1 N",
-    "correctAnswer": "a",
-    "questionID": "8f2h7j3k4l"
-  },
-  {
-    "question": "Which part of the electromagnetic spectrum has the longest wavelength?",
-    "options": "a. X-rays, b. Infrared radiation, c. Ultraviolet light, d. Gamma rays",
+    "question": "What is the largest continent by land area?",
+    "options": "a. Africa, b. Asia, c. Europe, d. North America",
     "correctAnswer": "b",
-    "questionID": "3w7e4r2t9y"
+    "questionID": "34"
   },
   {
-    "question": "What is the formula for work done?",
-    "options": "a. W = Fd, b. W = P/V, c. W = mgh, d. W = qV",
+    "question": "What is the chemical symbol for hydrogen?",
+    "options": "a. H, b. Hy, c. Ho, d. Ha",
     "correctAnswer": "a",
-    "questionID": "5e8q3r1t2y"
+    "questionID": "35"
   },
   {
-    "question": "What is the unit of frequency?",
-    "options": "a. Watt, b. Joule, c. Hertz, d. Ampere",
-    "correctAnswer": "c",
-    "questionID": "9w3r7t1y4e"
-  },
-  {
-    "question": "Which of the following is a non-contact force?",
-    "options": "a. Friction, b. Tension, c. Gravitational force, d. Magnetic force",
+    "question": "What is the capital of Germany?",
+    "options": "a. Frankfurt, b. Munich, c. Hamburg, d. Berlin",
     "correctAnswer": "d",
-    "questionID": "4y8t2h3g1r"
+    "questionID": "36"
   },
   {
-    "question": "What is the law of universal gravitation?",
-    "options": "a. F = ma, b. F = kx, c. F = G(m1m2/r^2), d. F = μN",
+    "question": "What is the currency of India?",
+    "options": "a. Dollar, b. Euro, c. Rupee, d. Yen",
     "correctAnswer": "c",
-    "questionID": "2t5h7g1r9e"
+    "questionID": "37"
   },
   {
-    "question": "What is the process by which heat is transferred through a fluid (liquid or gas) due to density differences?",
-    "options": "a. Conduction, b. Convection, c. Radiation, d. Insulation",
-    "correctAnswer": "b",
-    "questionID": "9b3v7g2d6h"
-  },
-  {
-    "question": "What is the unit of electric capacitance?",
-    "options": "a. Ampere, b. Ohm, c. Volt, d. Farad",
+    "question": "What is the name of Capital of Bangladesh?",
+    "options": "a. Cumilla, b. Narayangonj, c. Chittagong, d. Dhaka",
     "correctAnswer": "d",
-    "questionID": "1b8s2d6f5g"
-  },
-  {
-    "question": "Which of the following is an example of a non-renewable energy source?",
-    "options": "a. Wind power, b. Solar power, c. Natural gas, d. Geothermal energy",
-    "correctAnswer": "c",
-    "questionID": "5b7c9v3f6g"
-  },
-  {
-    "question": "What is the equation for Ohm's law?",
-    "options": "a. V = IR, b. P = IV, c. F = ma, d. Q = mcΔT",
-    "correctAnswer": "a",
-    "questionID": "2c8v3d1f6g"
-  },
-  {
-    "question": "Which type of mirror can form a real and inverted image?",
-    "options": "a. Convex mirror, b. Plane mirror, c. Concave mirror, d. Spherical mirror",
-    "correctAnswer": "c",
-    "questionID": "7c2o5n8c4a"
-  },
-  {
-    "question": "What is the SI unit of temperature?",
-    "options": "a. Kelvin, b. Celsius, c. Fahrenheit, d. Rankine",
-    "correctAnswer": "a",
-    "questionID": "1k8e2l6v5i"
-  },
-  {
-    "question": "Which of the following is a semiconductor material?",
-    "options": "a. Copper, b. Aluminum, c. Silicon, d. Gold",
-    "correctAnswer": "c",
-    "questionID": "5s7i3l2c9o"
-  },
-  {
-    "question": "What is the law of reflection of light?",
-    "options": "a. Light bends when it passes through a medium, b. Light is absorbed by objects, c. Angle of incidence equals angle of reflection, d. Light travels in straight lines only",
-    "correctAnswer": "c",
-    "questionID": "9s4h6j2k3l"
-  },
-  {
-    "question": "What is the atomic number of carbon?",
-    "options": "a. 6, b. 14, c. 12, d. 8",
-    "correctAnswer": "a",
-    "questionID": "3s8h2j6k5l"
-  },
-  {
-    "question": "What is the speed of sound in air at room temperature (approximately)?",
-    "options": "a. 343 m/s, b. 1000 m/s, c. 186,282 m/s, d. 3 x 10^8 m/s",
-    "correctAnswer": "a",
-    "questionID": "6s2h7j3k4l"
-  },
-  {
-    "question": "Which of the following is a scalar quantity?",
-    "options": "a. Velocity, b. Force, c. Speed, d. Acceleration",
-    "correctAnswer": "c",
-    "questionID": "2s5c7e1v4r"
-  },
-  {
-    "question": "What is the refractive index of a vacuum or air?",
-    "options": "a. 1, b. 0, c. 2, d. 0.5",
-    "correctAnswer": "a",
-    "questionID": "8s2c7e3v4r"
-  },
-  {
-    "question": "Which planet is known as the 'Evening Star'?",
-    "options": "a. Earth, b. Mars, c. Venus, d. Jupiter",
-    "correctAnswer": "c",
-    "questionID": "3s7e2v9r6g"
-  },
-  {
-    "question": "What is the energy stored in an object due to its position or height above the ground?",
-    "options": "a. Kinetic energy, b. Potential energy, c. Thermal energy, d. Electrical energy",
-    "correctAnswer": "b",
-    "questionID": "7k2i5n8e4t"
-  },
-  {
-    "question": "Which of the following is a unit of pressure?",
-    "options": "a. Newton, b. Joule, c. Pascal, d. Watt",
-    "correctAnswer": "c",
-    "questionID": "5p7a3s2c9a"
-  },
-  {
-    "question": "What is the formula for pressure?"
-  },
-  {
-    "question": "What is the formula for pressure?",
-    "options": "a. P = F/A, b. W = P/V, c. W = mgh, d. W = qV",
-    "correctAnswer": "a",
-    "questionID": "5e8q3r1t2x"
+    "questionID": "38"
   }
-  
 ]
