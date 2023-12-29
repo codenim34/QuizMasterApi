@@ -1,13 +1,9 @@
 const fs = require('fs');
 
-
 class adminModel {
     constructor() {
         this.admins = this.loadAdmin();
     }
-
-
-
 
     loadAdmin() {
         try {
@@ -16,31 +12,25 @@ class adminModel {
         } catch (error) {
             return [];
         }
-
     }
-
-
 
     saveAdmins() {
         fs.writeFileSync('admins.json', JSON.stringify(this.admins, null, 2));
     }
 
-
-    function
+    // function
 
     createAdmin(admin) {
-
         this.admins.push(admin);
         this.saveAdmins();
         return admin;
-
     }
 
     findAdminByUsernameAndPassword(username, password) {
         return this.admins.find((admin) => admin.username === username && admin.password === password);
     }
 
-
+    //generateToken(username){}
 
 
 }

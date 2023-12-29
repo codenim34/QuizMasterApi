@@ -1,4 +1,4 @@
-// userView.js
+// UserView.js
 
 class UserView {
     sendSuccessResponse(res, message, data) {

@@ -1,3 +1,4 @@
+// adminView.js
 
 class AdminView{
     sendSuccessResponse(res, message, data) {
@@ -12,8 +13,6 @@ class AdminView{
             'Set-Cookie': `access_token=${token}`
         });
         res.end(JSON.stringify({ message, data }));
-
-
     }
 
     sendErrorResponse(res, statusCode, error) {

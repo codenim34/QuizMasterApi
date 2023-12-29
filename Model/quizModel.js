@@ -1,4 +1,5 @@
 // quizModel.js
+
 const fs = require('fs');
 
 //load quizzes from JSON file

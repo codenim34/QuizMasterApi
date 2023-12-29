@@ -1,5 +1,7 @@
 // adminController.js
+
 const adminModel = require('../Model/adminModel');
+
 class AdminController {
     constructor() {
         this.adminModel = new adminModel();
@@ -17,6 +19,6 @@ class AdminController {
         return this.adminModel.findAdminByUsernameAndPassword(username, password);
     }
 
-
 }
+
 module.exports = AdminController;
