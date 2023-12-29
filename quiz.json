@@ -130,5 +130,11 @@
     "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
     "correctAnswer": "c",
     "questionID": "3"
+  },
+  {
+    "question": "What is the name of Currency of Bangladesh?",
+    "options": "a. Rupee, b. Tas, c. Taka, d. haka",
+    "correctAnswer": "d",
+    "questionID": "40"
   }
 ]

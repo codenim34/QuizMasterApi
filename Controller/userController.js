@@ -32,16 +32,38 @@ class UserController {
             const { username, password } = JSON.parse(data);
 
             if (!username || !password) {
-                throw new Error('Invalid data: Username and password are required.');
+                throw new Error('Username and password are required.');
             }
 
-            const user = this.userModel.findUserByUsernameAndPassword(username, password);
+            let user = this.userModel.findUserByUsernameAndPassword(username, password);
             
-            return user;
+            if (user) {
+                const accessToken = this.userModel.generateAccessToken(user);
+                return { user, accessToken };
+            }
         } catch (error) {
             console.error(error);
             throw new Error(`Invalid data: ${error.message}`);
         }
+    }
+   
+    authenticateUser(req, res, next) {
+        const token = req.headers.authorization;
+
+        if (!token) {
+            this.userView.sendErrorResponse(res, 401, 'Unauthorized: Access token missing.');
+            return;
+        }
+
+        const user = this.userModel.findAdminByAccessToken(token);
+
+        if (!user) {
+            this.userView.sendErrorResponse(res, 401, 'Unauthorized: Invalid access token.');
+            return;
+        }
+        // Attach the admin object to the request for use in subsequent route handlers
+        req.user = user;
+        next();
     }
 }
 

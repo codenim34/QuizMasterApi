@@ -32,8 +32,9 @@ class AdminModel {
     }
 
     generateAccessToken(admin) {
-        // This is a simple example; you might want to use a more secure token generation method in a real-world scenario.
-        const accessToken = Buffer.from(`${admin.username}:${admin.password}`).toString('base64');
+        // This is a simple example; we might want to use a more secure token generation method in a real-world scenario.
+        //const accessToken = Buffer.from(`${admin.username}:${admin.password}`).toString('base64');
+        const accessToken= "$$@#"+admin.username+"4%%56"+admin.password+"789&&";
         admin.accessToken = accessToken;
         this.saveAdmins();
         return accessToken;

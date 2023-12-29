@@ -9,7 +9,8 @@
     "name": "Tasnim Ashraf",
     "username": "tasnim1834",
     "password": "password12",
-    "studentID": "210042122"
+    "studentID": "210042122",
+    "accessToken": "$$@#tasnim18344%%56password12789&&"
   },
   {
     "name": "Tasnim Ashraf",
@@ -40,5 +41,12 @@
     "username": "imtiazz",
     "password": "850",
     "studentID": "210214567"
+  },
+  {
+    "name": "ImtiazRisa",
+    "username": "imtiaz",
+    "password": "1850",
+    "studentID": "210214567",
+    "accessToken": "$$@#imtiaz4%%561850789&&"
   }
 ]

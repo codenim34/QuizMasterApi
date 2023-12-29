@@ -1,10 +1,12 @@
 // AdminController.js
 
 const AdminModel = require('../Model/adminModel');
+const AdminView = require('../View/adminView');
 
 class AdminController {
     constructor() {
         this.adminModel = new AdminModel();
+        this.adminView = new AdminView();
     }
 
     registerAdmin(data) {
@@ -46,10 +48,26 @@ class AdminController {
             throw new Error(`Invalid data: ${error.message}`);
         }
     }
+     authenticateAdmin(req, res, next) {
+        const token = req.headers.authorization;
 
-    findAdminByAccessToken(accessToken) {
-        return this.adminModel.findAdminByAccessToken(accessToken);
+        if (!token) {
+           this.adminView.sendErrorResponse(res, 401, 'Unauthorized: Access token missing.');
+           return;
+        }
+
+        const admin = this.adminModel.findAdminByAccessToken(token);
+
+        if (!admin) {
+            this.adminView.sendErrorResponse(res, 401, 'Unauthorized: Invalid access token.');
+            return;
+        }
+        // Attach the admin object to the request for use in subsequent route handlers
+        req.admin = admin;
+        next();
     }
+
+
 }
 
 module.exports = AdminController;

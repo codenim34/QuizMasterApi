@@ -30,6 +30,18 @@ class UserModel {
         this.saveUsers();
         return user;
     }
+    generateAccessToken(user) {
+        // This is a simple example; we might want to use a more secure token generation method in a real-world scenario.
+        //const accessToken = Buffer.from(`${admin.username}:${admin.password}`).toString('base64');
+        const accessToken= "$$@#"+user.username+"4%%56"+user.password+"789&&";
+        user.accessToken = accessToken;
+        this.saveUsers();
+        return accessToken;
+    }
+
+    findAdminByAccessToken(accessToken) {
+        return this.users.find((admin) => admin.accessToken === accessToken);
+    }
 
     findUserByUsernameAndPassword(username, password) {
         return this.users.find((user) => user.username === username && user.password === password);
