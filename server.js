@@ -1,152 +1,232 @@
-const http = require('http');
-const UserController = require('./Controller/userController');
-const UserView = require('./View/userView');
-const AdminController= require('./Controller/adminController');
-const AdminView =require('./View/adminView');
+const http = require("http");
+const url = require("url");
+const querystring = require("querystring");
+const UserController = require("./Controller/userController");
+const UserView = require("./View/userView");
+const AdminController = require("./Controller/adminController");
+const AdminView = require("./View/adminView");
 
-const  QuizView = require('./View/quizView');
-const {addQuiz, getAllQuizzes} = require("./Model/quizModel");
-
+const QuizView = require("./View/quizView");
+const { addQuiz, getAllQuizzes, takeQuiz } = require("./Model/quizModel");
 
 const server = http.createServer((req, res) => {
-    const userController = new UserController();
-    const userView = new UserView();
+  const userController = new UserController();
+  const userView = new UserView();
 
-    //admin controller, admin view
+  const adminController = new AdminController();
+  const adminView = new AdminView();
+  const quizView = new QuizView();
+  const { pathname } = url.parse(req.url);
 
-    const adminController = new AdminController();
-    const adminView = new AdminView();
-    const quizView= new QuizView();
+  if (req.method === "POST" && pathname === "/register") {
+    let data = "";
 
+    req.on("data", (chunk) => {
+      data += chunk;
+    });
+    req.on("end", () => {
+      try {
+        const registeredUser = userController.registerUser(data);
 
-    if (req.method === 'POST' && req.url === '/register') {
-        let data = '';
-        req.on('data', (chunk) => {
-            data += chunk;
-        });
+        userView.sendSuccessResponse(
+          res,
+          "User registered successfully",
+          registeredUser
+        );
+      } catch (error) {
+        userView.sendErrorResponse(res, 400, error.message);
+      }
+    });
+  }
+  //else if (req.method === "POST" && pathname === "/login") {
+  //     let data = "";
 
-        req.on('end', () => {
-            try {
-                const userData = JSON.parse(data);
-                const registeredUser = userController.registerUser(userData);
-                delete  registeredUser.password;
-                userView.sendSuccessResponse(res, 'User registered successfully', registeredUser);
-            } catch (error) {
-                userView.sendErrorResponse(res, 400, 'Invalid data');
-            }
-        });
-    } else if (req.method === 'POST' && req.url === '/login') {
-        let data = '';
-        req.on('data', (chunk) => {
-            data += chunk;
-        });
+  //     req.on("data", (chunk) => {
+  //       data += chunk;
+  //     });
 
-        req.on('end', () => {
-            try {
-                const { username, password } = JSON.parse(data);
-                const user = userController.loginUser(username, password);
-                if (user) {
-                    userView.sendSuccessResponse(res, 'Login successful');
-                } else {
-                    userView.sendErrorResponse(res, 401, 'Authentication failed');
-                }
-            } catch (error) {
-                userView.sendErrorResponse(res, 400, 'Invalid data');
-            }
-        });
-    }else if(req.method==='POST'  && req.url==='/admin/register'){
-           let data='';
-           req.on('data',(chunk)=>{
-               data+=chunk;
-           });
+  //     req.on("end", () => {
+  //       try {
+  //         const loginResult = userController.loginUser(data);
 
-           req.on('end',()=>{
-               try{
-                   const adminData= JSON.parse(data);
-                   const registeredAdmin = adminController.registerAdmin(adminData);
-                   delete adminData.password;
-                   adminView.sendSuccessResponse(res,"Registered admin successfully", adminData);
-               }catch (error){
-                   adminView.sendErrorResponse(res,400,'Invalid data');
-               }
-           })
+  //         if (user) {
+  //           const { user, accessToken } = loginResult;
+  //           delete user.password;
+  //           this.userView.sendLogInSuccessResponse(res, "Login successful", {
+  //             user,
+  //             access_token: accessToken,
+  //           });
+  //         } else {
+  //           userView.sendErrorResponse(res, 401, "Authentication failed");
+  //         }
+  //       } catch (error) {
+  //         userView.sendErrorResponse(res, 400, error.message);
+  //       }
+  //     });
+  //   }
+  else if (req.method === "POST" && pathname === "/login") {
+    let data = "";
 
+    req.on("data", (chunk) => {
+      data += chunk;
+    });
 
-    }else if(req.method==='POST' && req.url==='/admin/login'){
-         let data='';
-         req.on('data',chunk => {
-              data+=chunk;
-         });
+    req.on("end", () => {
+      try {
+        const result = userController.loginUser(data);
 
-         req.on('end',()=>{
-             try {
-                 const {username, password} = JSON.parse(data);
-                 const admin = adminController.loginAdmin(username,password);
-                 if(admin){
-                     delete  admin.password;
-                     adminView.sendLogInSuccessResponse(res,"login successful", {admin, access_token: "MyVerySecretAccessToken"});
-                 }else{
-                     adminView.sendErrorResponse(res,401,'Authentication failed');
-                 }
-
-             }catch (error){
-                 adminView.sendErrorResponse(res,400,'Invalid');
-             }
-         })
-    }else if( req.method==="POST" && req.url==="/admin/addQuiz"){
-
-        let data="";
-         req.on('data',(chunk)=>{
-             data+=chunk;
-         });
-
-         req.on('end',()=>{
-             const {question,options,correctAnswer,questionID} = JSON.parse(data);
-            const token= req.headers.authorization;
-
-            try{
-
-                const addedQuiz= addQuiz(question, options,correctAnswer,questionID);
-                const quizResponse = {
-                    question: addedQuiz.question,
-                    options: addedQuiz.options,
-                    questionID: addedQuiz.questionID
-                    // You can omit the correctAnswer property here
-                };
-                quizView.sendSuccessResponse(res,"added successfully",quizResponse);
-            } catch (error){
-                console.log(error);
-                quizView.sendErrorResponse(res,400,"invalid data");
-            }
-
-
-
-
-
-
-         })
-
-    }else if(req.method==="GET" && req.url==="/user/takeQuiz"){
-
-        try{
-           const data= getAllQuizzes();
-           delete data.correctAnswer;
-           quizView.sendSuccessResponse(res,"fetched successfully",data);
-
-        }catch (error){
-            quizView.sendErrorResponse(res,401,"No quiz is stored");
+        if (result) {
+          const { user, accessToken } = result;
+          delete user.password;
+           userView.sendLogInSuccessResponse(res, "Login successful", {
+            user,
+            access_token: accessToken,
+          });
+        } else {
+          userView.sendErrorResponse(res, 401, "Authentication failed");
         }
+      } catch (error) {
+        userView.sendErrorResponse(res, 400, error.message);
+      }
+    });
+  } else if (req.method === "POST" && pathname === "/admin/register") {
+    let data = "";
 
+    req.on("data", (chunk) => {
+      data += chunk;
+    });
+
+    req.on("end", () => {
+      try {
+        const registeredAdmin = adminController.registerAdmin(data);
+        adminView.sendSuccessResponse(
+          res,
+          "Admin registered successfully",
+          registeredAdmin
+        );
+      } catch (error) {
+        adminView.sendErrorResponse(res, 400, error.message);
+      }
+    });
+  } else if (req.method === "POST" && pathname === "/admin/login") {
+    let data = "";
+
+    req.on("data", (chunk) => {
+      data += chunk;
+    });
+
+    req.on("end", () => {
+      try {
+        const loginResult = adminController.loginAdmin(data);
+
+        if (loginResult) {
+          const { admin, accessToken } = loginResult;
+          delete admin.password;
+          adminView.sendLogInSuccessResponse(res, "Login successful", {
+            admin,
+            access_token: accessToken,
+          });
+        } else {
+          adminView.sendErrorResponse(res, 401, "Authentication failed");
+        }
+      } catch (error) {
+        adminView.sendErrorResponse(res, 400, error.message);
+      }
+    });
+  } else if (req.method === "POST" && pathname === "/admin/addQuiz") {
+    adminController.authenticateAdmin(req, res, () => {
+      let data = "";
+      req.on("data", (chunk) => {
+        data += chunk;
+      });
+
+      req.on("end", () => {
+        const { question, options, correctAnswer, questionID } =
+          JSON.parse(data);
+        const token = req.headers.authorization;
+
+        try {
+          const addedQuiz = addQuiz(
+            question,
+            options,
+            correctAnswer,
+            questionID
+          );
+          const quizResponse = {
+            question: addedQuiz.question,
+            options: addedQuiz.options,
+            questionID: addedQuiz.questionID,
+          };
+          quizView.sendSuccessResponse(
+            res,
+            "Quiz added successfully",
+            quizResponse
+          );
+        } catch (error) {
+          console.error(error);
+          quizView.sendErrorResponse(res, 400, "Invalid data");
+        }
+      });
+    });
+  } else if (req.method === "GET" && req.url === "/user/takeQuiz") {
+    try {
+      const data = getAllQuizzes();
+
+      quizView.sendSuccessResponse(res, "fetched successfully", data);
+    } catch (error) {
+      quizView.sendErrorResponse(res, 401, "No quiz is stored");
     }
+  } else if (req.method === "POST" && req.url === "/user/submitQuiz") {
+    userController.authenticateUser(req, res, () => {
+      let body = "";
+      req.on("data", (chunk) => {
+        body += chunk.toString();
+      });
+      req.on("end", () => {
+        try {
+          let userResponses = JSON.parse(body);
+          const result = takeQuiz(userResponses);
 
+          const response = {
+            name: req.user.name,
+            score: result.score,
+          };
+          // Prepare the leaderboard entry
+        //   const leaderboardEntry = {
+        //     name: req.user.name,
+        //     score: result.score, // Assuming result object has a score property
+        //   };
 
+        //   // Read the existing leaderboard data
+        //   fs.readFile("leaderboard.json", "utf8", (err, data) => {
+        //     if (err) throw err;
+        //     let leaderboard = JSON.parse(data || "[]");
+        //     leaderboard.push(leaderboardEntry);
 
-    else {
-        userView.sendErrorResponse(res, 404, 'Not Found');
-    }
+        //     // Write the updated leaderboard data back to the file
+        //     fs.writeFile(
+        //       "leaderboard.json",
+        //       JSON.stringify(leaderboard, null, 2),
+        //       "utf8",
+        //       (err) => {
+        //         if (err) throw err;
+        //       }
+        //     );
+        //   });
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(response));
+        } catch (error) {
+          res.writeHead(400, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Invalid JSON in request body" }));
+        }
+      });
+    });
+}else {
+    userView.sendErrorResponse(res, 404, "Not Found");
+  }
 });
 
-server.listen(3000, () => {
-    console.log('Server is listening on port 3000');
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
-

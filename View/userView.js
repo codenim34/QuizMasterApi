@@ -1,7 +1,11 @@
-// userView.js
+// UserView.js
 
 class UserView {
     sendSuccessResponse(res, message, data) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ message, data }));
+    }
+    sendLogInSuccessResponse(res, message, data) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ message, data }));
     }
