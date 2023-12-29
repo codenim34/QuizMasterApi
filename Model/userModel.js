@@ -1,4 +1,4 @@
-// userModel.js
+// UserModel.js
 
 const fs = require('fs');
 
@@ -21,6 +21,10 @@ class UserModel {
     }
 
     createUser(user) {
+        const existingUser = this.users.find((u) => u.username === user.username);
+        if (existingUser) {
+            throw new Error('Username is already taken. Please choose another one.');
+        }
 
         this.users.push(user);
         this.saveUsers();
@@ -33,4 +37,3 @@ class UserModel {
 }
 
 module.exports = UserModel;
-
