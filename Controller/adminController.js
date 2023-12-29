@@ -35,7 +35,12 @@ class AdminController {
 
             const admin = this.adminModel.findAdminByUsernameAndPassword(username, password);
 
-            return admin;
+            if (admin) {
+                const accessToken = this.adminModel.generateAccessToken(admin);
+                return { admin, accessToken };
+            }
+
+            return null;
         } catch (error) {
             console.error(error);
             throw new Error(`Invalid data: ${error.message}`);

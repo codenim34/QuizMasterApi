@@ -31,6 +31,18 @@ class AdminModel {
         return admin;
     }
 
+    generateAccessToken(admin) {
+        // This is a simple example; you might want to use a more secure token generation method in a real-world scenario.
+        const accessToken = Buffer.from(`${admin.username}:${admin.password}`).toString('base64');
+        admin.accessToken = accessToken;
+        this.saveAdmins();
+        return accessToken;
+    }
+
+    findAdminByAccessToken(accessToken) {
+        return this.admins.find((admin) => admin.accessToken === accessToken);
+    }
+
     findAdminByUsernameAndPassword(username, password) {
         return this.admins.find((admin) => admin.username === username && admin.password === password);
     }

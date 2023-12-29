@@ -78,11 +78,12 @@ const server = http.createServer((req, res) => {
     
         req.on('end', () => {
             try {
-                const admin = adminController.loginAdmin(data);
+                const loginResult = adminController.loginAdmin(data);
     
-                if (admin) {
+                if (loginResult) {
+                    const { admin, accessToken } = loginResult;
                     delete admin.password;
-                    adminView.sendLogInSuccessResponse(res, 'Login successful', { admin, access_token: 'MyVerySecretAccessToken' });
+                    adminView.sendLogInSuccessResponse(res, 'Login successful', { admin, access_token: accessToken });
                 } else {
                     adminView.sendErrorResponse(res, 401, 'Authentication failed');
                 }
@@ -159,6 +160,8 @@ const PORT = 3000;
 server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
+
+
 
 
 

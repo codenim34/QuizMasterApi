@@ -30,30 +30,6 @@
     "studentID": "210042167"
   },
   {
-<<<<<<< HEAD
-    "name": "Tahmid Ashraf",
-    "username": "streleon",
-    "password": "password12345",
-    "studentID": "2100421600"
-  },
-  {
-    "name": "Tahmid Ashraf",
-    "username": "streleon",
-    "password": "password12345",
-    "studentID": "2100421600"
-  },
-  {
-    "name": "Tahmid Ashraf",
-    "username": "streleon",
-    "password": "password1235",
-    "studentID": "210042160"
-  },
-  {
-    "name": "Tahmid Ashraf",
-    "username": "streleon",
-    "password": "password12345",
-    "studentID": "2100421600"
-=======
     "name": "Imtiaz Risat",
     "username": "imtiazzz",
     "password": "1850",
@@ -64,6 +40,5 @@
     "username": "imtiazz",
     "password": "850",
     "studentID": "210214567"
->>>>>>> origin/ImtiaZzz
   }
 ]
