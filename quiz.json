@@ -32,6 +32,16 @@
     "questionID": "4"
   },
   {
+    "question": "Which of these are major oceans?",
+    "options": "a. Atlantic, b. Pacific, c. Indian, d. Baltic",
+    "correctAnswers": [
+      "a",
+      "b",
+      "c"
+    ],
+    "questionID": "60"
+  },
+  {
     "question": "What is the fundamental particle in an atom with a positive charge?",
     "options": "a. Electron, b. Proton, c. Neutron, d. Photon",
     "correctAnswers": [
@@ -362,15 +372,5 @@
         "b"
       ],
       "questionID": "59"
-    },
-    {
-      "question": "Which of these are major oceans?",
-      "options": "a. Atlantic, b. Pacific, c. Indian, d. Baltic",
-      "correctAnswers": [
-        "a",
-        "b",
-        "c"
-      ],
-      "questionID": "60"
     }
 ]
