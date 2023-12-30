@@ -40,11 +40,6 @@ const addQuiz = (question, options, correctAnswers) => {
 };
 
 
-
-const getAllQuizzes = () => {
-    return loadQuizzes();
-};
-
 const takeQuiz = (userResponses) => {
     console.log("Received User Responses:", userResponses);
     const quizzes = loadQuizzes();
@@ -149,14 +144,20 @@ const getMistakenQuestions = (username) => {
     const mistakenQuestions = quizzes.filter(quiz => userMistakes.mistakes.includes(quiz.questionID));
     return mistakenQuestions;
 };
+// New function to get 10 random quizzes
+const getRandomQuizzes = () => {
+    const quizzes = loadQuizzes();
+    const shuffled = quizzes.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 10);
+};
 
 
 
 
 module.exports = {
     addQuiz,
-    getAllQuizzes,
     takeQuiz,
     loadLeaderboard,
-    getMistakenQuestions
+    getMistakenQuestions,
+    getRandomQuizzes,
 };
