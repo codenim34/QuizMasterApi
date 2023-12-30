@@ -184,6 +184,14 @@ const server = http.createServer((req, res) => {
         score: entry.marks.reduce((acc, cur) => acc + cur, 0)
       })).sort((a, b) => b.score - a.score);
 
+      let rank = 1;
+      for (let i = 0; i < sortedLeaderboard.length; i++) {
+        if (i > 0 && sortedLeaderboard[i].score < sortedLeaderboard[i - 1].score) {
+          rank = i + 1;
+        }
+        sortedLeaderboard[i].rank = rank;
+      }
+
       quizView.sendSuccessResponse(
           res,
           "Leaderboard fetched successfully",
