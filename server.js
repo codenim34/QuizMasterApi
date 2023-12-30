@@ -133,7 +133,8 @@ const server = http.createServer((req, res) => {
         adminView.sendErrorResponse(res, 400, error.message);
       }
     });
-  } else if (req.method === "POST" && pathname === "/admin/addQuiz") {
+  } // Existing code...
+  else if (req.method === "POST" && pathname === "/admin/addQuiz") {
     adminController.authenticateAdmin(req, res, () => {
       let data = "";
       req.on("data", (chunk) => {
@@ -141,34 +142,24 @@ const server = http.createServer((req, res) => {
       });
 
       req.on("end", () => {
-        const { question, options, correctAnswer, questionID } =
-          JSON.parse(data);
-        const token = req.headers.authorization;
-
+        const { question, options, correctAnswers, questionID } = JSON.parse(data);
         try {
-          const addedQuiz = addQuiz(
-            question,
-            options,
-            correctAnswer,
-            questionID
-          );
+          const addedQuiz = addQuiz(question, options, correctAnswers, questionID);
           const quizResponse = {
             question: addedQuiz.question,
             options: addedQuiz.options,
             questionID: addedQuiz.questionID,
           };
-          quizView.sendSuccessResponse(
-            res,
-            "Quiz added successfully",
-            quizResponse
-          );
+          quizView.sendSuccessResponse(res, "Quiz added successfully", quizResponse);
         } catch (error) {
           console.error(error);
           quizView.sendErrorResponse(res, 400, "Invalid data");
         }
       });
     });
-  } else if (req.method === "GET" && req.url === "/user/takeQuiz") {
+  }
+// Remaining code...
+  else if (req.method === "GET" && req.url === "/user/takeQuiz") {
     try {
       const data = getAllQuizzes();
 
@@ -191,28 +182,6 @@ const server = http.createServer((req, res) => {
             name: req.user.name,
             score: result.score,
           };
-          // Prepare the leaderboard entry
-        //   const leaderboardEntry = {
-        //     name: req.user.name,
-        //     score: result.score, // Assuming result object has a score property
-        //   };
-
-        //   // Read the existing leaderboard data
-        //   fs.readFile("leaderboard.json", "utf8", (err, data) => {
-        //     if (err) throw err;
-        //     let leaderboard = JSON.parse(data || "[]");
-        //     leaderboard.push(leaderboardEntry);
-
-        //     // Write the updated leaderboard data back to the file
-        //     fs.writeFile(
-        //       "leaderboard.json",
-        //       JSON.stringify(leaderboard, null, 2),
-        //       "utf8",
-        //       (err) => {
-        //         if (err) throw err;
-        //       }
-        //     );
-        //   });
           res.writeHead(200, { "Content-Type": "application/json" });
           res.end(JSON.stringify(response));
         } catch (error) {
@@ -221,7 +190,7 @@ const server = http.createServer((req, res) => {
         }
       });
     });
-}else {
+  } else {
     userView.sendErrorResponse(res, 404, "Not Found");
   }
 });

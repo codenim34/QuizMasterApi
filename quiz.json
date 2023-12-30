@@ -2,139 +2,191 @@
   {
     "question": "What is the SI unit of force?",
     "options": "a. Newton, b. Watt, c. Joule, d. Volt",
-    "correctAnswer": "a",
+    "correctAnswers": [
+      "a"
+    ],
     "questionID": "1"
   },
   {
     "question": "Which of the following is a vector quantity?",
     "options": "a. Speed, b. Mass, c. Distance, d. Acceleration",
-    "correctAnswer": "d",
+    "correctAnswers": [
+      "d"
+    ],
     "questionID": "2"
   },
   {
     "question": "What is the boiling point of water in Celsius?",
     "options": "a. 100°C, b. 0°C, c. 212°F, d. 273 K",
-    "correctAnswer": "a",
+    "correctAnswers": [
+      "a"
+    ],
     "questionID": "3"
   },
   {
     "question": "Which law of motion states that 'for every action, there is an equal and opposite reaction'?",
     "options": "a. Newton's First Law, b. Newton's Second Law, c. Newton's Third Law, d. Archimedes' Principle",
-    "correctAnswer": "c",
+    "correctAnswers": [
+      "c"
+    ],
     "questionID": "4"
   },
   {
     "question": "What is the fundamental particle in an atom with a positive charge?",
     "options": "a. Electron, b. Proton, c. Neutron, d. Photon",
-    "correctAnswer": "b",
+    "correctAnswers": [
+      "b"
+    ],
     "questionID": "5"
   },
   {
     "question": "Which color of light has the shortest wavelength?",
     "options": "a. Red, b. Blue, c. Green, d. Yellow",
-    "correctAnswer": "b",
+    "correctAnswers": [
+      "b"
+    ],
     "questionID": "6"
   },
   {
     "question": "What is the unit of electric current?",
     "options": "a. Ampere, b. Volt, c. Ohm, d. Watt",
-    "correctAnswer": "a",
+    "correctAnswers": [
+      "a"
+    ],
     "questionID": "7"
   },
   {
     "question": "What is the law of conservation of energy?",
     "options": "a. Energy cannot be created, b. Energy cannot be destroyed, c. Energy can change forms, d. All of the above",
-    "correctAnswer": "d",
+    "correctAnswers": [
+      "d"
+    ],
     "questionID": "8"
   },
   {
     "question": "Which planet is known as the 'Red Planet'?",
     "options": "a. Venus, b. Jupiter, c. Mars, d. Saturn",
-    "correctAnswer": "c",
+    "correctAnswers": [
+      "c"
+    ],
     "questionID": "9"
   },
   {
     "question": "What is the capital of Spain?",
     "options": "a. Barcelona, b. Madrid, c. Valencia, d. Seville",
-    "correctAnswer": "b",
+    "correctAnswers": [
+      "b"
+    ],
     "questionID": "10"
   },
   {
-    "question": "What is the currency of the United Kingdom?",
-    "options": "a. Dollar, b. Euro, c. Pound, d. Yen",
-    "correctAnswer": "c",
+    "question": "Which of the following are European capitals?",
+    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
+    "correctAnswers": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
     "questionID": "11"
   },
   {
-    "question": "What is the highest waterfall in the world?",
+    "question": "Which of these is the highest waterfall in the world?",
     "options": "a. Niagara Falls, b. Victoria Falls, c. Angel Falls, d. Iguazu Falls",
-    "correctAnswer": "c",
+    "correctAnswers": [
+      "c"
+    ],
     "questionID": "12"
+  },
+  {
+    "question": "Which of these is the currency of the United Kingdom?",
+    "options": "a. Dollar, b. Euro, c. Pound, d. Yen",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "13"
   },
   {
     "question": "What is the chemical symbol for silver?",
     "options": "a. Si, b. S, c. Ag, d. Au",
-    "correctAnswer": "c",
+    "correctAnswers": [
+      "c"
+    ],
     "questionID": "31"
   },
   {
     "question": "What is the square root of 144?",
     "options": "a. 10, b. 11, c. 12, d. 13",
-    "correctAnswer": "c",
+    "correctAnswers": [
+      "c"
+    ],
     "questionID": "32"
   },
   {
-    "question": "What is the capital of Italy?",
+    "question": "Which of these is the capital of Italy?",
     "options": "a. Venice, b. Milan, c. Rome, d. Naples",
-    "correctAnswer": "c",
+    "correctAnswers": [
+      "c"
+    ],
     "questionID": "33"
   },
   {
     "question": "What is the largest continent by land area?",
     "options": "a. Africa, b. Asia, c. Europe, d. North America",
-    "correctAnswer": "b",
+    "correctAnswers": [
+      "b"
+    ],
     "questionID": "34"
   },
   {
     "question": "What is the chemical symbol for hydrogen?",
     "options": "a. H, b. Hy, c. Ho, d. Ha",
-    "correctAnswer": "a",
+    "correctAnswers": [
+      "a"
+    ],
     "questionID": "35"
   },
   {
-    "question": "What is the capital of Germany?",
+    "question": "Which of these is the capital of Germany?",
     "options": "a. Frankfurt, b. Munich, c. Hamburg, d. Berlin",
-    "correctAnswer": "d",
+    "correctAnswers": [
+      "d"
+    ],
     "questionID": "36"
   },
   {
     "question": "What is the currency of India?",
     "options": "a. Dollar, b. Euro, c. Rupee, d. Yen",
-    "correctAnswer": "c",
+    "correctAnswers": [
+      "c"
+    ],
     "questionID": "37"
   },
   {
-    "question": "What is the name of Capital of Bangladesh?",
+    "question": "What is the name of the capital of Bangladesh?",
     "options": "a. Cumilla, b. Narayangonj, c. Chittagong, d. Dhaka",
-    "correctAnswer": "d",
+    "correctAnswers": [
+      "d"
+    ],
     "questionID": "38"
   },
   {
-    "question": "What is the capital of France?",
-    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
-    "correctAnswer": "c",
-    "questionID": "3"
-  },
-  {
-    "question": "What is the capital of France?",
-    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
-    "correctAnswer": "c",
-    "questionID": "3"
-  },
-  {
-    "question": "What is the name of Currency of Bangladesh?",
-    "options": "a. Rupee, b. Tas, c. Taka, d. haka",
-    "correctAnswer": "d",
+    "question": "What is the name of the currency of Bangladesh?",
+    "options": "a. Rupee, b. Tas, c. Taka, d. Haka",
+    "correctAnswers": [
+      "c"
+    ],
     "questionID": "40"
+  },
+  {
+    "question": "Which of the following are European capitals?",
+    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
+    "correctAnswers": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "questionID": "3"
   }
 ]

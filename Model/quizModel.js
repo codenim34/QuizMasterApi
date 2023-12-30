@@ -1,8 +1,6 @@
-// quizModel.js
-
 const fs = require('fs');
 
-//load quizzes from JSON file
+// Load quizzes from JSON file
 const loadQuizzes = () => {
     try {
         const data = fs.readFileSync('quiz.json', 'utf8');
@@ -12,50 +10,31 @@ const loadQuizzes = () => {
     }
 };
 
-//save quizzes to JSON File
+// Save quizzes to JSON File
 const saveQuizzes = (quizzes) => {
     fs.writeFileSync('quiz.json', JSON.stringify(quizzes, null, 2), 'utf8');
 };
 
 class Quiz {
-    constructor(question, options,correctAnswer,questionID) {
+    constructor(question, options, correctAnswers, questionID) {
         this.question = question;
         this.options = options;
-        this.correctAnswer= correctAnswer;
-        this.questionID= questionID;
+        this.correctAnswers = correctAnswers; // Correct answers now an array
+        this.questionID = questionID;
     }
 }
 
-const addQuiz = (question, options,correctAnswer,questionID) => {
-    const quiz = new Quiz(question, options,correctAnswer,questionID);
+const addQuiz = (question, options, correctAnswers, questionID) => {
+    const quiz = new Quiz(question, options, correctAnswers, questionID);
     const quizzes = loadQuizzes();
     quizzes.push(quiz);
     saveQuizzes(quizzes);
     return quiz;
 };
+
 const getAllQuizzes = () => {
-    try {
-        const data = fs.readFileSync('quiz.json', 'utf8');
-        const quizzes = JSON.parse(data);
-
-        const simplifiedQuizzes = [];
-        let serialID = 1;
-        for (const quiz of quizzes) {
-            simplifiedQuizzes.push({
-                serialID: serialID,
-                question: quiz.question,
-                options: quiz.options,
-                questionID: quiz.questionID,
-            });
-            serialID++;
-        }
-
-        return simplifiedQuizzes;
-    } catch (err) {
-        return [];
-    }
+    return loadQuizzes();
 };
-
 
 const takeQuiz = (userResponses) => {
     const quizzes = loadQuizzes();
@@ -63,13 +42,19 @@ const takeQuiz = (userResponses) => {
 
     userResponses.forEach(response => {
         const quiz = quizzes.find(q => q.questionID === response.questionID);
-        if (quiz && response.userAnswer === quiz.correctAnswer) {
-            score++;
+        if (quiz) {
+            // Check if all user's answers match the correct answers
+            const isCorrect = quiz.correctAnswers.length === response.userAnswers.length &&
+                response.userAnswers.every(answer => quiz.correctAnswers.includes(answer));
+            if (isCorrect) {
+                score++;
+            }
         }
     });
 
     return { score };
 };
+
 
 module.exports = {
     addQuiz,
