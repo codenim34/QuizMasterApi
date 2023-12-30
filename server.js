@@ -5,9 +5,9 @@ const UserController = require("./Controller/userController");
 const UserView = require("./View/userView");
 const AdminController = require("./Controller/adminController");
 const AdminView = require("./View/adminView");
+const { addQuiz, getAllQuizzes, takeQuiz, loadLeaderboard} = require("./Model/quizModel");
 
 const QuizView = require("./View/quizView");
-const { addQuiz, getAllQuizzes, takeQuiz } = require("./Model/quizModel");
 
 const server = http.createServer((req, res) => {
   const userController = new UserController();
@@ -29,42 +29,15 @@ const server = http.createServer((req, res) => {
         const registeredUser = userController.registerUser(data);
 
         userView.sendSuccessResponse(
-          res,
-          "User registered successfully",
-          registeredUser
+            res,
+            "User registered successfully",
+            registeredUser
         );
       } catch (error) {
         userView.sendErrorResponse(res, 400, error.message);
       }
     });
-  }
-  //else if (req.method === "POST" && pathname === "/login") {
-  //     let data = "";
-
-  //     req.on("data", (chunk) => {
-  //       data += chunk;
-  //     });
-
-  //     req.on("end", () => {
-  //       try {
-  //         const loginResult = userController.loginUser(data);
-
-  //         if (user) {
-  //           const { user, accessToken } = loginResult;
-  //           delete user.password;
-  //           this.userView.sendLogInSuccessResponse(res, "Login successful", {
-  //             user,
-  //             access_token: accessToken,
-  //           });
-  //         } else {
-  //           userView.sendErrorResponse(res, 401, "Authentication failed");
-  //         }
-  //       } catch (error) {
-  //         userView.sendErrorResponse(res, 400, error.message);
-  //       }
-  //     });
-  //   }
-  else if (req.method === "POST" && pathname === "/login") {
+  } else if (req.method === "POST" && pathname === "/login") {
     let data = "";
 
     req.on("data", (chunk) => {
@@ -78,7 +51,7 @@ const server = http.createServer((req, res) => {
         if (result) {
           const { user, accessToken } = result;
           delete user.password;
-           userView.sendLogInSuccessResponse(res, "Login successful", {
+          userView.sendLogInSuccessResponse(res, "Login successful", {
             user,
             access_token: accessToken,
           });
@@ -100,9 +73,9 @@ const server = http.createServer((req, res) => {
       try {
         const registeredAdmin = adminController.registerAdmin(data);
         adminView.sendSuccessResponse(
-          res,
-          "Admin registered successfully",
-          registeredAdmin
+            res,
+            "Admin registered successfully",
+            registeredAdmin
         );
       } catch (error) {
         adminView.sendErrorResponse(res, 400, error.message);
@@ -133,8 +106,7 @@ const server = http.createServer((req, res) => {
         adminView.sendErrorResponse(res, 400, error.message);
       }
     });
-  } // Existing code...
-  else if (req.method === "POST" && pathname === "/admin/addQuiz") {
+  } else if (req.method === "POST" && pathname === "/admin/addQuiz") {
     adminController.authenticateAdmin(req, res, () => {
       let data = "";
       req.on("data", (chunk) => {
@@ -142,24 +114,33 @@ const server = http.createServer((req, res) => {
       });
 
       req.on("end", () => {
-        const { question, options, correctAnswers, questionID } = JSON.parse(data);
+        const { question, options, correctAnswers, questionID } = JSON.parse(
+            data
+        );
         try {
-          const addedQuiz = addQuiz(question, options, correctAnswers, questionID);
+          const addedQuiz = addQuiz(
+              question,
+              options,
+              correctAnswers,
+              questionID
+          );
           const quizResponse = {
             question: addedQuiz.question,
             options: addedQuiz.options,
             questionID: addedQuiz.questionID,
           };
-          quizView.sendSuccessResponse(res, "Quiz added successfully", quizResponse);
+          quizView.sendSuccessResponse(
+              res,
+              "Quiz added successfully",
+              quizResponse
+          );
         } catch (error) {
           console.error(error);
           quizView.sendErrorResponse(res, 400, "Invalid data");
         }
       });
     });
-  }
-// Remaining code...
-  else if (req.method === "GET" && req.url === "/user/takeQuiz") {
+  } else if (req.method === "GET" && req.url === "/user/takeQuiz") {
     try {
       const data = getAllQuizzes();
 
@@ -176,6 +157,7 @@ const server = http.createServer((req, res) => {
       req.on("end", () => {
         try {
           let userResponses = JSON.parse(body);
+          userResponses.username = req.user.username;
           const result = takeQuiz(userResponses);
 
           const response = {
@@ -186,12 +168,38 @@ const server = http.createServer((req, res) => {
           res.end(JSON.stringify(response));
         } catch (error) {
           res.writeHead(400, { "Content-Type": "application/json" });
-          res.end(JSON.stringify({ error: "Invalid JSON in request body" }));
+          res.end(
+              JSON.stringify({ error: "Invalid JSON in request body" })
+          );
         }
       });
     });
-  } else {
-    userView.sendErrorResponse(res, 404, "Not Found");
+  } else if (req.method === "GET" && req.url === "/leaderboard") {
+    try {
+      const leaderboard = loadLeaderboard();
+
+      // Calculate the total score for each user and sort the leaderboard
+      const sortedLeaderboard = leaderboard.map(entry => ({
+        username: entry.username,
+        score: entry.marks.reduce((acc, cur) => acc + cur, 0)
+      })).sort((a, b) => b.score - a.score);
+
+      let rank = 1;
+      for (let i = 0; i < sortedLeaderboard.length; i++) {
+        if (i > 0 && sortedLeaderboard[i].score < sortedLeaderboard[i - 1].score) {
+          rank = i + 1;
+        }
+        sortedLeaderboard[i].rank = rank;
+      }
+
+      quizView.sendSuccessResponse(
+          res,
+          "Leaderboard fetched successfully",
+          sortedLeaderboard
+      );
+    } catch (error) {
+      quizView.sendErrorResponse(res, 500, "Internal Server Error");
+    }
   }
 });
 

@@ -32,6 +32,16 @@
     "questionID": "4"
   },
   {
+    "question": "Which of these are major oceans?",
+    "options": "a. Atlantic, b. Pacific, c. Indian, d. Baltic",
+    "correctAnswers": [
+      "a",
+      "b",
+      "c"
+    ],
+    "questionID": "60"
+  },
+  {
     "question": "What is the fundamental particle in an atom with a positive charge?",
     "options": "a. Electron, b. Proton, c. Neutron, d. Photon",
     "correctAnswers": [
@@ -179,14 +189,188 @@
     "questionID": "40"
   },
   {
-    "question": "Which of the following are European capitals?",
-    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c",
-      "d"
-    ],
-    "questionID": "3"
-  }
+      "question": "Which of these elements are gases at room temperature?",
+      "options": "a. Oxygen, b. Carbon, c. Nitrogen, d. Helium",
+      "correctAnswers": [
+        "a",
+        "c",
+        "d"
+      ],
+      "questionID": "41"
+    },
+    {
+      "question": "Which of these countries are in Asia?",
+      "options": "a. China, b. India, c. Brazil, d. Japan",
+      "correctAnswers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "questionID": "42"
+    },
+    {
+      "question": "Which vitamins are water-soluble?",
+      "options": "a. Vitamin A, b. Vitamin C, c. Vitamin D, d. Vitamin B",
+      "correctAnswers": [
+        "b",
+        "d"
+      ],
+      "questionID": "43"
+    },
+    {
+      "question": "Which of these animals are mammals?",
+      "options": "a. Dolphin, b. Shark, c. Crocodile, d. Elephant",
+      "correctAnswers": [
+        "a",
+        "d"
+      ],
+      "questionID": "44"
+    },
+    {
+      "question": "Which of these are primary colors?",
+      "options": "a. Red, b. Green, c. Blue, d. Yellow",
+      "correctAnswers": [
+        "a",
+        "c",
+        "d"
+      ],
+      "questionID": "45"
+    },
+    {
+      "question": "Which of these languages are official in Switzerland?",
+      "options": "a. German, b. French, c. Italian, d. Spanish",
+      "correctAnswers": [
+        "a",
+        "b",
+        "c"
+      ],
+      "questionID": "46"
+    },
+    {
+      "question": "Which planets are gas giants?",
+      "options": "a. Mercury, b. Venus, c. Jupiter, d. Saturn",
+      "correctAnswers": [
+        "c",
+        "d"
+      ],
+      "questionID": "47"
+    },
+    {
+      "question": "Which are types of renewable energy?",
+      "options": "a. Solar, b. Coal, c. Wind, d. Hydroelectric",
+      "correctAnswers": [
+        "a",
+        "c",
+        "d"
+      ],
+      "questionID": "48"
+    },
+    {
+      "question": "Which organs are part of the human digestive system?",
+      "options": "a. Stomach, b. Liver, c. Kidney, d. Intestines",
+      "correctAnswers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "questionID": "49"
+    },
+    {
+      "question": "Which are official languages of Canada?",
+      "options": "a. English, b. French, c. Spanish, d. German",
+      "correctAnswers": [
+        "a",
+        "b"
+      ],
+      "questionID": "50"
+    },
+    {
+      "question": "Which elements are noble gases?",
+      "options": "a. Helium, b. Oxygen, c. Neon, d. Argon",
+      "correctAnswers": [
+        "a",
+        "c",
+        "d"
+      ],
+      "questionID": "51"
+    },
+    {
+      "question": "Which of these countries are members of the European Union?",
+      "options": "a. Norway, b. Germany, c. Spain, d. Italy",
+      "correctAnswers": [
+        "b",
+        "c",
+        "d"
+      ],
+      "questionID": "52"
+    },
+    {
+      "question": "Which of these are types of clouds?",
+      "options": "a. Cirrus, b. Stratus, c. Cumulus, d. Pileus",
+      "correctAnswers": [
+        "a",
+        "b",
+        "c"
+      ],
+      "questionID": "53"
+    },
+    {
+      "question": "Which of these bones are in the human arm?",
+      "options": "a. Femur, b. Ulna, c. Radius, d. Humerus",
+      "correctAnswers": [
+        "b",
+        "c",
+        "d"
+      ],
+      "questionID": "54"
+    },
+    {
+      "question": "Which of these are programming languages?",
+      "options": "a. Python, b. Java, c. HTML, d. C++",
+      "correctAnswers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "questionID": "55"
+    },
+    {
+      "question": "Which of these instruments are string instruments?",
+      "options": "a. Violin, b. Trumpet, c. Guitar, d. Piano",
+      "correctAnswers": [
+        "a",
+        "c",
+        "d"
+      ],
+      "questionID": "56"
+    },
+    {
+      "question": "Which of these are planets in the Solar System?",
+      "options": "a. Earth, b. Pluto, c. Mars, d. Venus",
+      "correctAnswers": [
+        "a",
+        "c",
+        "d"
+      ],
+      "questionID": "57"
+    },
+    {
+      "question": "Which of these are parts of the human brain?",
+      "options": "a. Cerebrum, b. Medulla, c. Pancreas, d. Cerebellum",
+      "correctAnswers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "questionID": "58"
+    },
+    {
+      "question": "Which of these elements are found in water?",
+      "options": "a. Hydrogen, b. Oxygen, c. Nitrogen, d. Carbon",
+      "correctAnswers": [
+        "a",
+        "b"
+      ],
+      "questionID": "59"
+    }
 ]
