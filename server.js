@@ -5,7 +5,7 @@ const UserController = require("./Controller/userController");
 const UserView = require("./View/userView");
 const AdminController = require("./Controller/adminController");
 const AdminView = require("./View/adminView");
-const { addQuiz, getAllQuizzes, takeQuiz, loadLeaderboard} = require("./Model/quizModel");
+const { addQuiz, getAllQuizzes, takeQuiz, loadLeaderboard, getMistakenQuestions } = require("./Model/quizModel");
 
 const QuizView = require("./View/quizView");
 
@@ -173,6 +173,20 @@ const server = http.createServer((req, res) => {
           );
         }
       });
+    });
+  } else if (req.method === "GET" && pathname.startsWith("/user/mistakes")) {
+    userController.authenticateUser(req, res, () => {
+      const username = req.user.username; // Assuming the username is stored in req.user
+      try {
+        const mistakenQuestions = getMistakenQuestions(username);
+        quizView.sendSuccessResponse(
+            res,
+            "Mistaken questions fetched successfully",
+            mistakenQuestions
+        );
+      } catch (error) {
+        quizView.sendErrorResponse(res, 500, "Internal Server Error");
+      }
     });
   } else if (req.method === "GET" && req.url === "/leaderboard") {
     try {

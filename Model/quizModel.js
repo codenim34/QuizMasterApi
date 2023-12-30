@@ -136,6 +136,19 @@ const updateMistakes = (username, incorrectQuestions) => {
     saveMistakes(mistakes);
 };
 
+// Function to get the questions a user made mistakes on
+const getMistakenQuestions = (username) => {
+    const mistakes = loadMistakes();
+    const userMistakes = mistakes.find(m => m.username === username);
+
+    if (!userMistakes) {
+        return [];
+    }
+
+    const quizzes = loadQuizzes();
+    const mistakenQuestions = quizzes.filter(quiz => userMistakes.mistakes.includes(quiz.questionID));
+    return mistakenQuestions;
+};
 
 
 
@@ -144,5 +157,6 @@ module.exports = {
     addQuiz,
     getAllQuizzes,
     takeQuiz,
-    loadLeaderboard
+    loadLeaderboard,
+    getMistakenQuestions
 };
