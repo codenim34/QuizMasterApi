@@ -1,4 +1,5 @@
 const fs = require('fs');
+const leaderboardFilePath = 'leaderboard.json';
 
 // Load quizzes from JSON file
 const loadQuizzes = () => {
@@ -37,6 +38,7 @@ const getAllQuizzes = () => {
 };
 
 const takeQuiz = (userResponses) => {
+    console.log("Received User Responses:", userResponses);
     const quizzes = loadQuizzes();
     let score = 0;
 
@@ -52,12 +54,48 @@ const takeQuiz = (userResponses) => {
         }
     });
 
+    updateLeaderboard(userResponses.username, score); // Pass the correct username
     return { score };
 };
+
+
+const loadLeaderboard = () => {
+    try {
+        const data = fs.readFileSync(leaderboardFilePath, 'utf8');
+
+        return JSON.parse(data);
+    } catch (err) {
+        return [];
+    }
+};
+
+
+const saveLeaderboard = (leaderboard) => {
+    fs.writeFileSync(leaderboardFilePath, JSON.stringify(leaderboard, null, 2), 'utf8');
+};
+
+const updateLeaderboard = (username, score) => {
+    console.log(`Updating leaderboard for ${username} with score ${score}`);
+
+    const leaderboard = loadLeaderboard();
+    const userEntryIndex = leaderboard.findIndex(entry => entry.username === username);
+
+    if (userEntryIndex !== -1) {
+        leaderboard[userEntryIndex].marks.push(score);
+    } else {
+        leaderboard.push({ username: username, marks: [score] });
+    }
+
+    saveLeaderboard(leaderboard);
+};
+
+
+
 
 
 module.exports = {
     addQuiz,
     getAllQuizzes,
     takeQuiz,
+    loadLeaderboard
 };
