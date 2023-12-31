@@ -12,11 +12,26 @@ const loadQuizzes = () => {
         return [];
     }
 };
+const loadSubjectQuizzes = (subjectName) => {
+    try {
+        const path = `Database/${subjectName}.json`;
+        const data = fs.readFileSync(path, 'utf8');
+        return JSON.parse(data);
+    } catch (err) {
+        return [];
+    }
+};
 
 // Save quizzes to JSON File
 const saveQuizzes = (quizzes) => {
     fs.writeFileSync(quizFilePath, JSON.stringify(quizzes, null, 2), 'utf8');
 };
+
+const saveSubjectQuizzes = (quizzes,subject) => {
+    const path = `Database/${subject}.json`;
+    fs.writeFileSync(path, JSON.stringify(quizzes, null, 2), 'utf8');
+};
+
 
 class Quiz {
     constructor(question, options, correctAnswers, questionID) {
@@ -27,7 +42,7 @@ class Quiz {
     }
 }
 
-const addQuiz = (question, options, correctAnswers) => {
+const addQuiz = ( question, options, correctAnswers) => {
     const quizzes = loadQuizzes();
 
     // Generate a unique questionID by adding 1 to the maximum existing questionID
@@ -37,6 +52,21 @@ const addQuiz = (question, options, correctAnswers) => {
     const quiz = new Quiz(question, options, correctAnswers, newQuestionID);
     quizzes.push(quiz);
     saveQuizzes(quizzes);
+    console.log(quiz);
+    return quiz;
+};
+const addSubQuiz = ( question, options, correctAnswers,subject) => {
+    const quizzes = loadQuizzes();
+    const subjectQuizzes = loadSubjectQuizzes(subject);
+    // Generate a unique questionID by adding 1 to the maximum existing questionID
+    const maxQuestionID = Math.max(...quizzes.map(quiz => parseInt(quiz.questionID) || 0));
+    const newQuestionID = (maxQuestionID + 1).toString();
+
+    const quiz = new Quiz(question, options, correctAnswers, newQuestionID);
+    quizzes.push(quiz);
+    saveQuizzes(quizzes);
+    subjectQuizzes.push(quiz);
+    saveSubjectQuizzes(subjectQuizzes,subject);
     console.log(quiz);
     return quiz;
 };
@@ -186,6 +216,7 @@ const getUserQuizHistory = (username) => {
 
 module.exports = {
     addQuiz,
+    addSubQuiz,
     takeQuiz,
     loadLeaderboard,
     getMistakenQuestions,

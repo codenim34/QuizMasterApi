@@ -5,7 +5,7 @@ const UserController = require("./Controller/userController");
 const UserView = require("./View/userView");
 const AdminController = require("./Controller/adminController");
 const AdminView = require("./View/adminView");
-const { addQuiz, takeQuiz, loadLeaderboard, getMistakenQuestions, getUserQuizHistory, getRandomQuizzes } = require("./Model/quizModel");
+const { addQuiz,addSubQuiz, takeQuiz, loadLeaderboard, getMistakenQuestions, getUserQuizHistory, getRandomQuizzes } = require("./Model/quizModel");
 
 
 const QuizView = require("./View/quizView");
@@ -19,6 +19,7 @@ const server = http.createServer((req, res) => {
   const quizView = new QuizView();
   const { pathname } = url.parse(req.url);
 
+  //user register
   if (req.method === "POST" && pathname === "/register") {
     let data = "";
 
@@ -38,7 +39,9 @@ const server = http.createServer((req, res) => {
         userView.sendErrorResponse(res, 400, error.message);
       }
     });
-  } else if (req.method === "POST" && pathname === "/login") {
+  }
+  //user login
+  else if (req.method === "POST" && pathname === "/login") {
     let data = "";
 
     req.on("data", (chunk) => {
@@ -63,7 +66,9 @@ const server = http.createServer((req, res) => {
         userView.sendErrorResponse(res, 400, error.message);
       }
     });
-  } else if (req.method === "POST" && pathname === "/admin/register") {
+  }
+  // admin register
+  else if (req.method === "POST" && pathname === "/admin/register") {
     let data = "";
 
     req.on("data", (chunk) => {
@@ -82,7 +87,9 @@ const server = http.createServer((req, res) => {
         adminView.sendErrorResponse(res, 400, error.message);
       }
     });
-  } else if (req.method === "POST" && pathname === "/admin/login") {
+  }
+  //admin login
+  else if (req.method === "POST" && pathname === "/admin/login") {
     let data = "";
 
     req.on("data", (chunk) => {
@@ -107,7 +114,9 @@ const server = http.createServer((req, res) => {
         adminView.sendErrorResponse(res, 400, error.message);
       }
     });
-  } else if (req.method === "POST" && pathname === "/admin/addQuiz") {
+  }
+  //add quiz by admin
+  else if (req.method === "POST" && pathname === "/admin/addQuiz") {
     adminController.authenticateAdmin(req, res, () => {
       let data = "";
       req.on("data", (chunk) => {
@@ -123,7 +132,7 @@ const server = http.createServer((req, res) => {
               question,
               options,
               correctAnswers,
-              questionID
+              //questionID
           );
           const quizResponse = {
             question: addedQuiz.question,
@@ -141,7 +150,45 @@ const server = http.createServer((req, res) => {
         }
       });
     });
-  } else if (req.method === "GET" && req.url === "/user/takeQuiz") {
+  }
+  // physics subject wise quiz adding
+  else if (req.method === "POST" && pathname.startsWith("/admin/addQuiz/")) {
+    const subject =  pathname.split('/').pop();
+    adminController.authenticateAdmin(req, res, () => {
+      let data = "";
+      req.on("data", (chunk) => {
+        data += chunk;
+      });
+
+      req.on("end", () => {
+        const { question, options, correctAnswers } = JSON.parse(
+            data
+        );
+        try {
+          const addedQuiz = addSubQuiz(
+              question,
+              options,
+              correctAnswers,
+              subject
+          );
+          const quizResponse = {
+            question: addedQuiz.question,
+            options: addedQuiz.options,
+            questionID: addedQuiz.questionID,
+          };
+          quizView.sendSuccessResponse(
+              res,
+              "Quiz added successfully",
+              quizResponse
+          );
+        } catch (error) {
+          console.error(error);
+          quizView.sendErrorResponse(res, 400, "Invalid data");
+        }
+      });
+    });
+  }
+  else if (req.method === "GET" && req.url === "/user/takeQuiz") {
     try {
       const randomQuizzes = getRandomQuizzes();
       quizView.sendSuccessResponse(res, "10 random quizzes fetched successfully", randomQuizzes);

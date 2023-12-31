@@ -1762,5 +1762,62 @@
       "d"
     ],
     "questionID": "212"
+  },
+  {
+    "question": "What is the unit of force?",
+    "options": "a. N, b. Kg, c. T, d.h",
+    "correctAnswers": [
+      "d"
+    ],
+    "questionID": "213"
+  },
+  {
+    "question": "What is the unit of work?",
+    "options": "a. N, b. Kg, c. J, d.h",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "214"
+  },
+  {
+    "question": "What is the unit of Pressure?",
+    "options": "a. Pa, b. atm, c. J, d.h",
+    "correctAnswers": [
+      "a",
+      "b"
+    ],
+    "questionID": "215"
+  },
+  {
+    "question": "What is the pH value of pure water at 35°C?",
+    "options": "a. 1, b. 7, c. 10, d. 14",
+    "correctAnswers": [
+      "b"
+    ],
+    "questionID": "216"
+  },
+  {
+    "question": "What is the speed of light in vacuum?",
+    "options": "a. 3.00 x 10^8 m/s, b. 2.99 x 10^8 m/s, c. 3.01 x 10^8 m/s, d. 3.00 x 10^9 m/s",
+    "correctAnswers": [
+      "a"
+    ],
+    "questionID": "217"
+  },
+  {
+    "question": "What is the derivative of x^2?",
+    "options": "a. 2x, b. x^2, c. x, d. 2",
+    "correctAnswers": [
+      "a"
+    ],
+    "questionID": "218"
+  },
+  {
+    "question": "Which of the following is a synonym for 'happy'?",
+    "options": "a. Sad, b. Angry, c. Joyful, d. Annoyed",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "219"
   }
 ]
