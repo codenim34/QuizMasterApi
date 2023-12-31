@@ -52,7 +52,6 @@ const addQuiz = ( question, options, correctAnswers) => {
     const quiz = new Quiz(question, options, correctAnswers, newQuestionID);
     quizzes.push(quiz);
     saveQuizzes(quizzes);
-    console.log(quiz);
     return quiz;
 };
 const addSubQuiz = ( question, options, correctAnswers,subject) => {
@@ -67,7 +66,6 @@ const addSubQuiz = ( question, options, correctAnswers,subject) => {
     saveQuizzes(quizzes);
     subjectQuizzes.push(quiz);
     saveSubjectQuizzes(subjectQuizzes,subject);
-    console.log(quiz);
     return quiz;
 };
 
@@ -202,6 +200,17 @@ const getRandomQuizzes = () => {
         };
     });
 };
+const getRandomSubQuizzes = (name) => {
+    const quizzes = loadSubjectQuizzes(name);
+    const shuffled = quizzes.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 10).map(quiz => {
+        return {
+            question: quiz.question,
+            options: quiz.options,
+            questionID: quiz.questionID
+        };
+    });
+};
 const getUserQuizHistory = (username) => {
     const leaderboard = loadLeaderboard();
     const user = leaderboard.find(user => user.username === username);
@@ -221,5 +230,6 @@ module.exports = {
     loadLeaderboard,
     getMistakenQuestions,
     getRandomQuizzes,
+    getRandomSubQuizzes,
     getUserQuizHistory,
 };

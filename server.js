@@ -5,7 +5,7 @@ const UserController = require("./Controller/userController");
 const UserView = require("./View/userView");
 const AdminController = require("./Controller/adminController");
 const AdminView = require("./View/adminView");
-const { addQuiz,addSubQuiz, takeQuiz, loadLeaderboard, getMistakenQuestions, getUserQuizHistory, getRandomQuizzes } = require("./Model/quizModel");
+const { addQuiz,addSubQuiz, takeQuiz, loadLeaderboard, getMistakenQuestions, getUserQuizHistory, getRandomQuizzes,getRandomSubQuizzes } = require("./Model/quizModel");
 
 
 const QuizView = require("./View/quizView");
@@ -188,6 +188,7 @@ const server = http.createServer((req, res) => {
       });
     });
   }
+    //get quiz by id
   else if (req.method === "GET" && req.url === "/user/takeQuiz") {
     try {
       const randomQuizzes = getRandomQuizzes();
@@ -195,7 +196,20 @@ const server = http.createServer((req, res) => {
     } catch (error) {
       quizView.sendErrorResponse(res, 500, "Internal Server Error");
     }
-  } else if (req.method === "POST" && req.url === "/user/submitQuiz") {
+  }
+    //get physics subject wise quiz by id
+    else if (req.method === "GET" && pathname.startsWith("/user/takeQuiz/")) {
+        const subject =  pathname.split('/').pop();
+        try {
+            const randomQuizzes = getRandomSubQuizzes(subject);
+            quizView.sendSuccessResponse(res, `Random quizzes fetched from ${subject} successfully` , randomQuizzes);
+        } catch (error) {
+            quizView.sendErrorResponse(res, 500, "Internal Server Error");
+        }
+  }
+
+  //submit quiz by user
+  else if (req.method === "POST" && req.url === "/user/submitQuiz") {
     userController.authenticateUser(req, res, () => {
       let body = "";
       req.on("data", (chunk) => {
@@ -222,7 +236,9 @@ const server = http.createServer((req, res) => {
         }
       });
     });
-  } else if (req.method === "GET" && pathname.startsWith("/user/mistakes")) {
+  }
+  //get mistaken questions by user
+  else if (req.method === "GET" && pathname.startsWith("/user/mistakes")) {
     userController.authenticateUser(req, res, () => {
       const username = req.user.username; // Assuming the username is stored in req.user
       try {
@@ -236,7 +252,9 @@ const server = http.createServer((req, res) => {
         quizView.sendErrorResponse(res, 500, "Internal Server Error");
       }
     });
-  } else if (req.method === "GET" && pathname === "/user/quizhistory") {
+  }
+  //get quiz history by user
+  else if (req.method === "GET" && pathname === "/user/quizhistory") {
     userController.authenticateUser(req, res, () => {
       const username = req.user.username; // Assuming the username is stored in req.user
       try {
@@ -251,7 +269,7 @@ const server = http.createServer((req, res) => {
       }
     });
   }
-
+ //get leaderboard
   else if (req.method === "GET" && req.url === "/leaderboard") {
     try {
       const leaderboard = loadLeaderboard();
