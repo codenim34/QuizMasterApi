@@ -6,5 +6,13 @@
       "c"
     ],
     "questionID": "219"
+  },
+  {
+    "question": "Which of the following is a synonym for 'joyful'?",
+    "options": "a. Sad, b. Angry, c. Happy, d. Annoyed",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "222"
   }
 ]

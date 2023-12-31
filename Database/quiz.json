@@ -1827,5 +1827,21 @@
       "a"
     ],
     "questionID": "220"
+  },
+  {
+    "question": "What is the pH value of acid?",
+    "options": "a. 1, b. 7, c. 10, d. 14",
+    "correctAnswers": [
+      "a"
+    ],
+    "questionID": "221"
+  },
+  {
+    "question": "Which of the following is a synonym for 'joyful'?",
+    "options": "a. Sad, b. Angry, c. Happy, d. Annoyed",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "222"
   }
 ]

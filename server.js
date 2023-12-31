@@ -215,6 +215,7 @@ const server = http.createServer((req, res) => {
       req.on("data", (chunk) => {
         body += chunk.toString();
       });
+      console.log(body);
       req.on("end", () => {
         try {
           let userResponses = JSON.parse(body);
@@ -224,6 +225,9 @@ const server = http.createServer((req, res) => {
           const response = {
             name: req.user.name,
             score: result.score,
+            No_of_Incorrect_ans: result.noIncorrectQuestions,
+            Total_Questions: result.TotalQuestions,
+             Success_Rate: result.sucessRate
           };
      
           res.writeHead(200, { "Content-Type": "application/json" });

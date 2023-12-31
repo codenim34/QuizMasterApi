@@ -71,10 +71,11 @@ const addSubQuiz = ( question, options, correctAnswers,subject) => {
 
 
 const takeQuiz = (userResponses) => {
-    console.log("Received User Responses:", userResponses);
+    
     const quizzes = loadQuizzes();
     let score = 0;
     let incorrectQuestions = [];
+    let noIncorrectQuestions=0;
     userResponses.forEach(response => {
         const quiz = quizzes.find(q => q.questionID === response.questionID);
         if (quiz) {
@@ -82,16 +83,24 @@ const takeQuiz = (userResponses) => {
                 response.userAnswers.every(answer => quiz.correctAnswers.includes(answer));
             if (!isCorrect) {
                 incorrectQuestions.push(quiz.questionID);
+                noIncorrectQuestions++;
             }
             if (isCorrect) {
                 score++;
             }
         }
-    });
 
-    updateLeaderboard(userResponses.username, score);
+    });
+     let TotalQuestions=score+noIncorrectQuestions;
+    let sucessRate = ((score/TotalQuestions)*100) + "%";
+    updateLeaderboard(userResponses.username, sucessRate);
     updateMistakes(userResponses.username, incorrectQuestions);
-    return { score };
+   
+    return { score,
+        noIncorrectQuestions,
+        TotalQuestions,
+        sucessRate
+    };
 };
 
 
