@@ -170,6 +170,14 @@ const getRandomQuizzes = () => {
         };
     });
 };
+const getUserQuizHistory = (username) => {
+    const leaderboard = loadLeaderboard();
+    const user = leaderboard.find(user => user.username === username);
+    if (!user) {
+        return null; // or handle as needed
+    }
+    return user.marks.map((mark, index) => `Quiz ${index + 1}: ${mark}`);
+};
 
 
 
@@ -180,4 +188,5 @@ module.exports = {
     loadLeaderboard,
     getMistakenQuestions,
     getRandomQuizzes,
+    getUserQuizHistory,
 };
