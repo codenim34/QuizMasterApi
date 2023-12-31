@@ -181,7 +181,7 @@ const server = http.createServer((req, res) => {
         const mistakenQuestions = getMistakenQuestions(username);
         quizView.sendSuccessResponse(
             res,
-            "Mistaken questions fetched successfully",
+            "10 random mistaken quizzes fetched successfully",
             mistakenQuestions
         );
       } catch (error) {

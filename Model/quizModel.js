@@ -136,12 +136,18 @@ const getMistakenQuestions = (username) => {
     const mistakes = loadMistakes();
     const userMistakes = mistakes.find(m => m.username === username);
 
-    if (!userMistakes) {
+    if (!userMistakes || userMistakes.mistakes.length === 0) {
         return [];
     }
 
+    // Shuffle the mistaken questions
+    const shuffledMistakes = userMistakes.mistakes.sort(() => 0.5 - Math.random());
+
+    // Slice the first 10 (or fewer, if there aren't 10)
+    const selectedMistakes = shuffledMistakes.slice(0, 10);
+
     const quizzes = loadQuizzes();
-    return quizzes.filter(quiz => userMistakes.mistakes.includes(quiz.questionID)).map(quiz => {
+    return quizzes.filter(quiz => selectedMistakes.includes(quiz.questionID)).map(quiz => {
         return {
             question: quiz.question,
             options: quiz.options,
@@ -149,6 +155,7 @@ const getMistakenQuestions = (username) => {
         };
     });
 };
+
 
 
 // New function to get 10 random quizzes
