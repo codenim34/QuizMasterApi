@@ -858,27 +858,5 @@
       "d"
     ],
     "questionID": "100"
-  },
-  {
-    "question": "Which of the following are European capitals?",
-    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c",
-      "d"
-    ],
-    "questionID": "101"
-  },
-  {
-    "question": "Which of the following are European capitals?",
-    "options": "a. Berlin, b. Madrid, c. Paris, d. Rome",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c",
-      "d"
-    ],
-    "questionID": "102"
   }
 ]

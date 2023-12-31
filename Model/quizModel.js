@@ -141,14 +141,27 @@ const getMistakenQuestions = (username) => {
     }
 
     const quizzes = loadQuizzes();
-    const mistakenQuestions = quizzes.filter(quiz => userMistakes.mistakes.includes(quiz.questionID));
-    return mistakenQuestions;
+    return quizzes.filter(quiz => userMistakes.mistakes.includes(quiz.questionID)).map(quiz => {
+        return {
+            question: quiz.question,
+            options: quiz.options,
+            questionID: quiz.questionID
+        };
+    });
 };
+
+
 // New function to get 10 random quizzes
 const getRandomQuizzes = () => {
     const quizzes = loadQuizzes();
     const shuffled = quizzes.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 10);
+    return shuffled.slice(0, 10).map(quiz => {
+        return {
+            question: quiz.question,
+            options: quiz.options,
+            questionID: quiz.questionID
+        };
+    });
 };
 
 
