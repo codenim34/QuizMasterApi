@@ -6,7 +6,7 @@ const UserView = require("./View/userView");
 const AdminController = require("./Controller/adminController");
 const AdminView = require("./View/adminView");
 const { addQuiz, takeQuiz, loadLeaderboard, getMistakenQuestions, getUserQuizHistory, getRandomQuizzes } = require("./Model/quizModel");
-const {  } = require("./Model/quizModel");
+
 
 const QuizView = require("./View/quizView");
 
