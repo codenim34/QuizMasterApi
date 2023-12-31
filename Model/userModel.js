@@ -9,7 +9,7 @@ class UserModel {
 
     loadUsers() {
         try {
-            const usersData = fs.readFileSync('users.json', 'utf8');
+            const usersData = fs.readFileSync('Database/users.json', 'utf8');
             return JSON.parse(usersData);
         } catch (error) {
             return [];
@@ -17,7 +17,7 @@ class UserModel {
     }
 
     saveUsers() {
-        fs.writeFileSync('users.json', JSON.stringify(this.users, null, 2));
+        fs.writeFileSync('Database/users.json', JSON.stringify(this.users, null, 2));
     }
 
     createUser(user) {
@@ -25,7 +25,7 @@ class UserModel {
         if (existingUser) {
             throw new Error('Username is already taken. Please choose another one.');
         }
-
+        //user.password = user.password;
         this.users.push(user);
         this.saveUsers();
         return user;

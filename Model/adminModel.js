@@ -9,7 +9,7 @@ class AdminModel {
 
     loadAdmins() {
         try {
-            const adminsData = fs.readFileSync('admins.json', 'utf8');
+            const adminsData = fs.readFileSync('Database/admins.json', 'utf8');
             return JSON.parse(adminsData);
         } catch (error) {
             return [];
@@ -17,7 +17,7 @@ class AdminModel {
     }
 
     saveAdmins() {
-        fs.writeFileSync('admins.json', JSON.stringify(this.admins, null, 2));
+        fs.writeFileSync('Database/admins.json', JSON.stringify(this.admins, null, 2));
     }
 
     createAdmin(admin) {
