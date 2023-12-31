@@ -5,7 +5,8 @@ const UserController = require("./Controller/userController");
 const UserView = require("./View/userView");
 const AdminController = require("./Controller/adminController");
 const AdminView = require("./View/adminView");
-const { addQuiz, getAllQuizzes, takeQuiz, loadLeaderboard} = require("./Model/quizModel");
+const { addQuiz, takeQuiz, loadLeaderboard, getMistakenQuestions, getUserQuizHistory, getRandomQuizzes } = require("./Model/quizModel");
+
 
 const QuizView = require("./View/quizView");
 
@@ -142,11 +143,10 @@ const server = http.createServer((req, res) => {
     });
   } else if (req.method === "GET" && req.url === "/user/takeQuiz") {
     try {
-      const data = getAllQuizzes();
-
-      quizView.sendSuccessResponse(res, "fetched successfully", data);
+      const randomQuizzes = getRandomQuizzes();
+      quizView.sendSuccessResponse(res, "10 random quizzes fetched successfully", randomQuizzes);
     } catch (error) {
-      quizView.sendErrorResponse(res, 401, "No quiz is stored");
+      quizView.sendErrorResponse(res, 500, "Internal Server Error");
     }
   } else if (req.method === "POST" && req.url === "/user/submitQuiz") {
     userController.authenticateUser(req, res, () => {
@@ -174,7 +174,37 @@ const server = http.createServer((req, res) => {
         }
       });
     });
-  } else if (req.method === "GET" && req.url === "/leaderboard") {
+  } else if (req.method === "GET" && pathname.startsWith("/user/mistakes")) {
+    userController.authenticateUser(req, res, () => {
+      const username = req.user.username; // Assuming the username is stored in req.user
+      try {
+        const mistakenQuestions = getMistakenQuestions(username);
+        quizView.sendSuccessResponse(
+            res,
+            "10 random mistaken quizzes fetched successfully",
+            mistakenQuestions
+        );
+      } catch (error) {
+        quizView.sendErrorResponse(res, 500, "Internal Server Error");
+      }
+    });
+  } else if (req.method === "GET" && pathname === "/user/quizhistory") {
+    userController.authenticateUser(req, res, () => {
+      const username = req.user.username; // Assuming the username is stored in req.user
+      try {
+        const quizHistory = getUserQuizHistory(username);
+        if (quizHistory) {
+          quizView.sendSuccessResponse(res, "Here is your quiz history:", quizHistory);
+        } else {
+          quizView.sendErrorResponse(res, 404, "User not found or no quiz history available");
+        }
+      } catch (error) {
+        quizView.sendErrorResponse(res, 500, "Internal Server Error");
+      }
+    });
+  }
+
+  else if (req.method === "GET" && req.url === "/leaderboard") {
     try {
       const leaderboard = loadLeaderboard();
 

@@ -23,10 +23,16 @@
   },
   {
     "username": "RedEagle4",
-    "password": "LetsChageTheWorld"
+    "password": "LetsChageTheWorld",
+    "accessToken": "$$@#RedEagle44%%56LetsChageTheWorld789&&"
   },
   {
     "username": "RedEagle4",
     "password": "LetsChageTheWorld"
+  },
+  {
+    "username": "Red",
+    "password": "LetsChageTheWorld",
+    "accessToken": "$$@#Red4%%56LetsChageTheWorld789&&"
   }
 ]
