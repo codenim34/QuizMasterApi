@@ -23,5 +23,21 @@
       "a"
     ],
     "questionID": "217"
+  },
+  {
+    "question": "What is the unit of work?",
+    "options": "a. N, b. Kg, c. J, d.h",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "226"
+  },
+  {
+    "question": "What is the unit of work?",
+    "options": "a. N, b. Kg, c. J, d.h",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "227"
   }
 ]

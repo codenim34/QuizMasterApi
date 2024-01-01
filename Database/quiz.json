@@ -1843,5 +1843,53 @@
       "c"
     ],
     "questionID": "222"
+  },
+  {
+    "question": "What is the derivative of x^2?",
+    "options": "a. 2x, b. x^2, c. x, d. 2",
+    "correctAnswers": [
+      "a"
+    ],
+    "questionID": "223"
+  },
+  {
+    "question": "What is the derivative of x^2?",
+    "options": "a. 2x, b. x^2, c. x, d. 2",
+    "correctAnswers": [
+      "a"
+    ],
+    "questionID": "224"
+  },
+  {
+    "question": "What is the derivative of x^2?",
+    "options": "a. 2x, b. x^2, c. x, d. 2",
+    "correctAnswers": [
+      "a"
+    ],
+    "questionID": "225"
+  },
+  {
+    "question": "What is the unit of work?",
+    "options": "a. N, b. Kg, c. J, d.h",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "226"
+  },
+  {
+    "question": "What is the unit of work?",
+    "options": "a. N, b. Kg, c. J, d.h",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "227"
+  },
+  {
+    "question": "Which of the following is a synonym for 'happy'?",
+    "options": "a. Sad, b. Angry, c. Joyful, d. Annoyed",
+    "correctAnswers": [
+      "c"
+    ],
+    "questionID": "228"
   }
 ]

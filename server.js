@@ -115,42 +115,6 @@ const server = http.createServer((req, res) => {
       }
     });
   }
-  //add quiz by admin
-  else if (req.method === "POST" && pathname === "/admin/addQuiz") {
-    adminController.authenticateAdmin(req, res, () => {
-      let data = "";
-      req.on("data", (chunk) => {
-        data += chunk;
-      });
-
-      req.on("end", () => {
-        const { question, options, correctAnswers, questionID } = JSON.parse(
-            data
-        );
-        try {
-          const addedQuiz = addQuiz(
-              question,
-              options,
-              correctAnswers,
-              //questionID
-          );
-          const quizResponse = {
-            question: addedQuiz.question,
-            options: addedQuiz.options,
-            questionID: addedQuiz.questionID,
-          };
-          quizView.sendSuccessResponse(
-              res,
-              "Quiz added successfully",
-              quizResponse
-          );
-        } catch (error) {
-          console.error(error);
-          quizView.sendErrorResponse(res, 400, "Invalid data");
-        }
-      });
-    });
-  }
   // physics subject wise quiz adding
   else if (req.method === "POST" && pathname.startsWith("/admin/addQuiz/")) {
     const subject =  pathname.split('/').pop();
