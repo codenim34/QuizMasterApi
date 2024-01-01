@@ -187,11 +187,11 @@ const server = http.createServer((req, res) => {
           const result = takeQuiz(userResponses);
 
           const response = {
-            name: req.user.name,
-            score: result.score,
-            No_of_Incorrect_ans: result.noIncorrectQuestions,
-            Total_Questions: result.TotalQuestions,
-             Success_Rate: result.sucessRate
+            Name: req.user.name,
+            Score: result.score,
+            Incorrect: result.noIncorrectQuestions,
+            "Total Questions": result.TotalQuestions,
+            "Success Rate": result.successRate + "%"
           };
      
           res.writeHead(200, { "Content-Type": "application/json" });
@@ -244,28 +244,39 @@ const server = http.createServer((req, res) => {
 
       // Calculate the total score for each user and sort the leaderboard
       const sortedLeaderboard = leaderboard.map(entry => ({
-        username: entry.username,
-        score: entry.marks.reduce((acc, cur) => acc + cur, 0)
-      })).sort((a, b) => b.score - a.score);
+        Username: entry.username,
+        Score: (
+            entry.percentages.reduce((acc, cur) => acc + cur, 0) /
+            entry.percentages.length
+        ).toFixed(2),
+        "Total Marks": entry.marks.reduce((acc, cur) => acc + cur, 0),
+      })).sort((a, b) => b.Score - a.Score);
 
       let rank = 1;
       for (let i = 0; i < sortedLeaderboard.length; i++) {
-        if (i > 0 && sortedLeaderboard[i].score < sortedLeaderboard[i - 1].score) {
+        if (i > 0 && sortedLeaderboard[i].Score < sortedLeaderboard[i - 1].Score) {
           rank = i + 1;
         }
         sortedLeaderboard[i].rank = rank;
+        sortedLeaderboard[i].Score = `${sortedLeaderboard[i].Score}/100`;
       }
+
+      const response = {
+        data: sortedLeaderboard
+      };
 
       quizView.sendSuccessResponse(
           res,
           "Leaderboard fetched successfully",
-          sortedLeaderboard
+          response
       );
     } catch (error) {
       quizView.sendErrorResponse(res, 500, "Internal Server Error");
     }
   }
 });
+
+
 
 const PORT = 3000;
 server.listen(PORT, () => {

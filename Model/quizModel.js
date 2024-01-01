@@ -74,8 +74,13 @@ const takeQuiz = (userResponses) => {
     const quizzes = loadQuizzes();
     let score = 0;
     let incorrectQuestions = [];
-    let correctQuestions = []; // New list to track correct answers
+    let correctQuestions = [];
     let noIncorrectQuestions = 0;
+
+    // Load the user's current mistakes
+    const userMistakes = loadMistakes();
+    const userMistakesIndex = userMistakes.findIndex(m => m.username === userResponses.username);
+    const currentUserMistakes = userMistakesIndex !== -1 ? userMistakes[userMistakesIndex].mistakes : [];
 
     userResponses.forEach(response => {
         const quiz = quizzes.find(q => q.questionID === response.questionID);
@@ -85,21 +90,41 @@ const takeQuiz = (userResponses) => {
 
             if (isCorrect) {
                 score++;
-                correctQuestions.push(quiz.questionID); // Add to correctQuestions if answered correctly
+                correctQuestions.push(quiz.questionID);
+
+                // Check if the question is in the user's mistakes and remove it if it is
+                const questionIndex = currentUserMistakes.indexOf(quiz.questionID);
+                if (questionIndex !== -1) {
+                    currentUserMistakes.splice(questionIndex, 1);
+                }
             } else {
                 incorrectQuestions.push(quiz.questionID);
                 noIncorrectQuestions++;
+
+                // Add the incorrect question to the user's mistakes if not already in it
+                if (!currentUserMistakes.includes(quiz.questionID)) {
+                    currentUserMistakes.push(quiz.questionID);
+                }
             }
         }
     });
 
     let TotalQuestions = score + noIncorrectQuestions;
-    let successRate = ((score / TotalQuestions) * 100) + "%";
-    updateLeaderboard(userResponses.username, successRate);
-    updateMistakes(userResponses.username, incorrectQuestions, correctQuestions); // Pass correctQuestions
+    let successRate = ((score / TotalQuestions) * 100).toFixed(2);
+    updateLeaderboard(userResponses.username, score, TotalQuestions);
+
+    // Update the user's mistakes with the current list
+    if (userMistakesIndex !== -1) {
+        userMistakes[userMistakesIndex].mistakes = currentUserMistakes;
+    } else {
+        userMistakes.push({ username: userResponses.username, mistakes: currentUserMistakes });
+    }
+    saveMistakes(userMistakes);
 
     return { score, noIncorrectQuestions, TotalQuestions, successRate };
 };
+
+
 
 
 
@@ -118,7 +143,7 @@ const saveLeaderboard = (leaderboard) => {
     fs.writeFileSync(leaderboardFilePath, JSON.stringify(leaderboard, null, 2), 'utf8');
 };
 
-const updateLeaderboard = (username, score) => {
+const updateLeaderboard = (username, score, totalQuestions) => {
     console.log(`Updating leaderboard for ${username} with score ${score}`);
 
     const leaderboard = loadLeaderboard();
@@ -126,12 +151,15 @@ const updateLeaderboard = (username, score) => {
 
     if (userEntryIndex !== -1) {
         leaderboard[userEntryIndex].marks.push(score);
+        const percentage = parseFloat(((score / totalQuestions) * 100).toFixed(2)); // Calculate the percentage as a number
+        leaderboard[userEntryIndex].percentages.push(percentage);
     } else {
-        leaderboard.push({ username: username, marks: [score] });
+        leaderboard.push({ username: username, marks: [score], percentages: [parseFloat(((score / totalQuestions) * 100).toFixed(2))] });
     }
 
     saveLeaderboard(leaderboard);
 };
+
 
 // Load mistakes data from JSON file
 const loadMistakes = () => {
