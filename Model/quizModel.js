@@ -71,37 +71,36 @@ const addSubQuiz = ( question, options, correctAnswers,subject) => {
 
 
 const takeQuiz = (userResponses) => {
-    
     const quizzes = loadQuizzes();
     let score = 0;
     let incorrectQuestions = [];
-    let noIncorrectQuestions=0;
+    let correctQuestions = []; // New list to track correct answers
+    let noIncorrectQuestions = 0;
+
     userResponses.forEach(response => {
         const quiz = quizzes.find(q => q.questionID === response.questionID);
         if (quiz) {
             const isCorrect = quiz.correctAnswers.length === response.userAnswers.length &&
                 response.userAnswers.every(answer => quiz.correctAnswers.includes(answer));
-            if (!isCorrect) {
+
+            if (isCorrect) {
+                score++;
+                correctQuestions.push(quiz.questionID); // Add to correctQuestions if answered correctly
+            } else {
                 incorrectQuestions.push(quiz.questionID);
                 noIncorrectQuestions++;
             }
-            if (isCorrect) {
-                score++;
-            }
         }
-
     });
-     let TotalQuestions=score+noIncorrectQuestions;
-    let sucessRate = ((score/TotalQuestions)*100) + "%";
-    updateLeaderboard(userResponses.username, sucessRate);
-    updateMistakes(userResponses.username, incorrectQuestions);
-   
-    return { score,
-        noIncorrectQuestions,
-        TotalQuestions,
-        sucessRate
-    };
+
+    let TotalQuestions = score + noIncorrectQuestions;
+    let successRate = ((score / TotalQuestions) * 100) + "%";
+    updateLeaderboard(userResponses.username, successRate);
+    updateMistakes(userResponses.username, incorrectQuestions, correctQuestions); // Pass correctQuestions
+
+    return { score, noIncorrectQuestions, TotalQuestions, successRate };
 };
+
 
 
 const loadLeaderboard = () => {
@@ -150,11 +149,19 @@ const saveMistakes = (mistakes) => {
 };
 
 // Function to add mistakes to the mistakes.json
-const updateMistakes = (username, incorrectQuestions) => {
+const updateMistakes = (username, incorrectQuestions, correctQuestions) => {
     const mistakes = loadMistakes();
     let userMistakes = mistakes.find(m => m.username === username);
 
     if (userMistakes) {
+        // Remove correctly answered questions
+        correctQuestions.forEach(questionID => {
+            const index = userMistakes.mistakes.indexOf(questionID);
+            if (index > -1) {
+                userMistakes.mistakes.splice(index, 1);
+            }
+        });
+
         // Add new mistakes ensuring no duplicates
         incorrectQuestions.forEach(questionID => {
             if (!userMistakes.mistakes.includes(questionID)) {
@@ -162,7 +169,7 @@ const updateMistakes = (username, incorrectQuestions) => {
             }
         });
     } else {
-        // If user not found, create a new entry
+        // If user not found, create a new entry for incorrect questions
         userMistakes = { username, mistakes: incorrectQuestions };
         mistakes.push(userMistakes);
     }
