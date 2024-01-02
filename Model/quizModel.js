@@ -261,7 +261,14 @@ const getUserQuizHistory = (username) => {
     if (!user) {
         return null; // or handle as needed
     }
-    return user.marks.map((mark, index) => `Quiz ${index + 1}: ${mark}`);
+    const output = user.marks.map((mark, index) => {
+        const percentage = user.percentages[index];
+        return `Quiz ${index + 1} : Score-> ${mark} , Rate ->${percentage}%`;
+    });
+
+    return output;
+
+
 };
 
 

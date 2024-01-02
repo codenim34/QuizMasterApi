@@ -5,7 +5,7 @@ const UserController = require("./Controller/userController");
 const UserView = require("./View/userView");
 const AdminController = require("./Controller/adminController");
 const AdminView = require("./View/adminView");
-const { addQuiz,addSubQuiz, takeQuiz, loadLeaderboard, getMistakenQuestions, getUserQuizHistory, getRandomQuizzes,getRandomSubQuizzes } = require("./Model/quizModel");
+const { addQuiz, addSubQuiz, takeQuiz, loadLeaderboard, getMistakenQuestions, getUserQuizHistory, getRandomQuizzes,getRandomSubQuizzes } = require("./Model/quizModel");
 
 
 const QuizView = require("./View/quizView");
@@ -258,7 +258,7 @@ const server = http.createServer((req, res) => {
           rank = i + 1;
         }
         sortedLeaderboard[i].rank = rank;
-        sortedLeaderboard[i].Score = `${sortedLeaderboard[i].Score}/100`;
+        sortedLeaderboard[i].Score = `${sortedLeaderboard[i].Score}%`;
       }
 
       const response = {
