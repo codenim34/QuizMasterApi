@@ -13,7 +13,7 @@ Welcome to the QuizMasterAPI, a simple Node.js-based quiz application that allow
     - [Admin Operations](#admin-operations)
 4. [Endpoints](#endpoints)
 5. [GitHub Repository](#github-repository)
-6. [Graphics](#graphics)
+6. [Developers](#Developers)
 
 ## Project Structure
 
