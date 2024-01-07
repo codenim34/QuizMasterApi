@@ -100,6 +100,10 @@ To view randomly fetched mistaken questions, send a GET request to `/user/mistak
 
 To view the quiz history, send a GET request to `/user/quizhistory`.
 
+#### View Leaderboard
+
+To view the leaderboard, send a GET request to `/leaderboard`.
+
 ### Admin Operations
 
 #### Admin Registration
