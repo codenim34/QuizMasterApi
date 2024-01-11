@@ -48,7 +48,7 @@ class AdminModel {
         }
       
         return modifiedPassword;
-      }
+    }
 
     generateAccessToken(admin) {
         // This is a simple example; we might want to use a more secure token generation method in a real-world scenario.

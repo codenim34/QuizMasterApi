@@ -25,11 +25,31 @@ class UserModel {
         if (existingUser) {
             throw new Error('Username is already taken. Please choose another one.');
         }
-        //user.password = user.password;
+        
+        user.password = this.simpleHash(user.password);
+        this.generateAccessToken(user);
+
         this.users.push(user);
         this.saveUsers();
         return user;
     }
+
+    simpleHash(password) {
+        if (password.length === 0) {
+          return 0;
+        }
+      
+        let modifiedPassword = '';
+      
+        for (let i = 0; i < password.length; i++) {
+          const charCode = password.charCodeAt(i);
+          const modifiedCharCode = (charCode + i) % 65536; // Using modulo to avoid overflow
+          modifiedPassword += String.fromCharCode(modifiedCharCode);
+        }
+      
+        return modifiedPassword;
+    }
+
     generateAccessToken(user) {
         // This is a simple example; we might want to use a more secure token generation method in a real-world scenario.
         //const accessToken = Buffer.from(`${admin.username}:${admin.password}`).toString('base64');
@@ -44,6 +64,7 @@ class UserModel {
     }
 
     findUserByUsernameAndPassword(username, password) {
+        password = this.simpleHash(password);
         return this.users.find((user) => user.username === username && user.password === password);
     }
 }
