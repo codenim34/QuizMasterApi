@@ -34,7 +34,7 @@ class AdminController {
             if (!username || !password) {
                 throw new Error('Invalid data: Username and password are required.');
             }
-
+            
             const admin = this.adminModel.findAdminByUsernameAndPassword(username, password);
 
             if (admin) {
