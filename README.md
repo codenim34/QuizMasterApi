@@ -13,11 +13,29 @@ Welcome to the QuizMasterAPI, a simple Node.js-based quiz application that allow
     - [Admin Operations](#admin-operations)
 4. [Endpoints](#endpoints)
 5. [GitHub Repository](#github-repository)
-6. [Developers](#Developers)
+6. [Developers](#developers)
 
 ## Project Structure
 
-The QuizApp project is organized into the following directories:
+The QuizMasterAPI adopts the **Model-View-Controller (MVC) design pattern**, a widely employed architectural principle in software development. This pattern partitions the application into three cohesive elements:
+
+***Model:*** Manages data handling and encapsulates the core business logic of the application.
+
+***View:*** Concerned with the presentation layer and the user interface, ensuring that data is displayed appropriately to users.
+
+***Controller:*** Acts as an intermediary, processing user inputs, modifying the model as necessary, and updating the view accordingly.
+
+#### The QuizMasterAPI project is organized as follows:
+
+- **Model:**
+  - adminModel.js
+  - quizModel.js
+  - userModel.js
+
+- **View:**
+  - adminView.js
+  - quizView.js
+  - userView.js
 
 - **Controller:**
   - adminController.js
@@ -34,16 +52,6 @@ The QuizApp project is organized into the following directories:
   - quiz.json
   - users.json
 
-- **Model:**
-  - adminModel.js
-  - quizModel.js
-  - userModel.js
-
-- **View:**
-  - adminView.js
-  - quizView.js
-  - userView.js
-
 - **Others:**
   - node_modules (dependencies folder)
   - package-lock.json
@@ -52,7 +60,7 @@ The QuizApp project is organized into the following directories:
 
 ## Installation
 
-To run the QuizApp on your local machine, follow these steps:
+To run the QuizMasrAPI on your local machine, follow these steps:
 
 1. Ensure you have Node.js installed. If not, download and install it from [https://nodejs.org/](https://nodejs.org/).
 
@@ -143,7 +151,7 @@ To view the leaderboard, send a GET request to `/leaderboard`.
 
 ## GitHub Repository
 
-The QuizApp GitHub repository can be found at [https://github.com/codenim34/QuizMasterApi.git](https://github.com/codenim34/QuizMasterApi.git).
+The QuizMasterAPI GitHub repository can be found at [https://github.com/codenim34/QuizMasterApi.git](https://github.com/codenim34/QuizMasterApi.git).
 
 ## Developers
 
