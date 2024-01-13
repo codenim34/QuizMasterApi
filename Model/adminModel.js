@@ -26,9 +26,28 @@ class AdminModel {
             throw new Error('Username is already taken. Please choose another one.');
         }
 
+        admin.password = this.simpleHash(admin.password);
+        this.generateAccessToken(admin);
+
         this.admins.push(admin);
         this.saveAdmins();
         return admin;
+    }
+
+    simpleHash(password) {
+        if (password.length === 0) {
+          return 0;
+        }
+      
+        let modifiedPassword = '';
+      
+        for (let i = 0; i < password.length; i++) {
+          const charCode = password.charCodeAt(i);
+          const modifiedCharCode = (charCode + i) % 65536; // Using modulo to avoid overflow
+          modifiedPassword += String.fromCharCode(modifiedCharCode);
+        }
+      
+        return modifiedPassword;
     }
 
     generateAccessToken(admin) {
@@ -45,6 +64,7 @@ class AdminModel {
     }
 
     findAdminByUsernameAndPassword(username, password) {
+        password = this.simpleHash(password);
         return this.admins.find((admin) => admin.username === username && admin.password === password);
     }
 }
