@@ -4,6 +4,10 @@
 
 Welcome to the QuizMasterAPI, a simple Node.js-based quiz application that allows users to register, login, take quizzes, view their quiz history and compare to others in the leaderboard. Additionally, administrators can register, login, add quizzes, and view the leaderboard. This documentation provides an overview of the project structure, functionality, and usage.
 
+## Project Context
+
+This project is developed by our team, [XtraDrill](#developers), for the Software Project Lab (SWE 4304) during the 3rd semester at the Islamic University of Technology. It represents one of the initial projects undertaken by our team during the early stages of our academic journey.
+
 ## Table of Contents
 
 1. [Project Structure](#project-structure)
@@ -60,7 +64,7 @@ The QuizMasterAPI adopts the **Model-View-Controller (MVC) design pattern**, a w
 
 ## Installation
 
-To run the QuizMasrAPI on your local machine, follow these steps:
+To run the QuizMasterAPI on your local machine, follow these steps:
 
 1. Ensure you have Node.js installed. If not, download and install it from [https://nodejs.org/](https://nodejs.org/).
 
@@ -86,47 +90,47 @@ To run the QuizMasrAPI on your local machine, follow these steps:
 
 ### User Operations
 
-#### User Registration
+#### 1. User Registration
 
 To register a new user, send a POST request to `/register` with the user's information in the request body.
 
-#### User Login
+#### 2. User Login
 
 To log in as a user, send a POST request to `/login` with the user's credentials in the request body. Successful login returns an access token.
 
-#### Take Quiz
+#### 3. Take Quiz
 
 1. Get 10 random quizzes: Send a GET request to `/user/takeQuiz`.
 2. Get 10 random quizzes for a specific subject (e.g., physics): Send a GET request to `/user/takeQuiz/physics`.
 3. Submit Quiz: Send a POST request to `/user/submitQuiz` with the user's quiz responses.
 
-#### View Mistaken Questions
+#### 4. View Mistaken Questions
 
 To view randomly fetched mistaken questions, send a GET request to `/user/mistakes`.
 
-#### View Quiz History
+#### 5. View Quiz History
 
 To view the quiz history, send a GET request to `/user/quizhistory`.
 
-#### View Leaderboard
+#### 6. View Leaderboard
 
 To view the leaderboard, send a GET request to `/leaderboard`.
 
 ### Admin Operations
 
-#### Admin Registration
+#### 1. Admin Registration
 
 To register a new admin, send a POST request to `/admin/register` with the admin's information in the request body.
 
-#### Admin Login
+#### 2. Admin Login
 
 To log in as an admin, send a POST request to `/admin/login` with the admin's credentials in the request body. Successful login returns an access token.
 
-#### Add Quiz
+#### 3. Add Quiz
 
 To add a quiz for a specific subject (e.g., physics), send a POST request to `/admin/addQuiz/physics` with the quiz details in the request body. Admin authentication is required.
 
-#### View Leaderboard
+#### 4. View Leaderboard
 
 To view the leaderboard, send a GET request to `/leaderboard`.
 
