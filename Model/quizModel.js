@@ -76,8 +76,20 @@ const addSubQuiz = ( question, options, correctAnswers,subject) => {
 };
 
 const validateQuiz = (question, options, correctAnswers) => {
-    //console.log(correctAnswers.length);
-    //console.log(correctAnswers);
+    
+    if (!Array.isArray(options)) {
+        throw new Error("Invalid data: Options must be an array.");
+    }
+
+    // Correct answers will be valid options based on the first letter
+    const validOptions = options.map((opt) => opt.trim().toLowerCase()[0]);
+
+    correctAnswers.forEach((answer) => {
+        if (!validOptions.includes(answer.trim().toLowerCase())) {
+            throw new Error("Invalid data: Correct answer must be the first letter of one of the provided options.");
+        }
+    });
+
 
     correctAnswers.forEach((answer) => {
         if (answer.length === 0) {

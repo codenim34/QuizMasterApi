@@ -1,412 +1,301 @@
 [
   {
     "question": "What is the chemical symbol for Gold?",
-    "options": "a. Au, b. Ag, c. Ga, d. Ge",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Au", "b. Ag", "c. Ga", "d. Ge"],
+    "correctAnswers": ["a"],
     "questionID": "101"
   },
   {
     "question": "Who wrote the play 'Romeo and Juliet'?",
-    "options": "a. William Shakespeare, b. Charles Dickens, c. Jane Austen, d. Leo Tolstoy",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. William Shakespeare", "b. Charles Dickens", "c. Jane Austen", "d. Leo Tolstoy"],
+    "correctAnswers": ["a"],
     "questionID": "102"
   },
   {
     "question": "What are the primary colors of light?",
-    "options": "a. Red, Yellow, Blue, b. Red, Green, Blue, c. Yellow, Green, Blue, d. Red, Yellow, Green",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Red, Green, Blue", "b. Red, Green, Blue", "c. Yellow, Green, Blue", "d. Red, Yellow, Green"],
+    "correctAnswers": ["b"],
     "questionID": "103"
   },
   {
     "question": "Which of these vitamins is known as ascorbic acid?",
-    "options": "a. Vitamin A, b. Vitamin B, c. Vitamin C, d. Vitamin D",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Vitamin A", "b. Vitamin B", "c. Vitamin C", "d. Vitamin D"],
+    "correctAnswers": ["c"],
     "questionID": "104"
   },
   {
     "question": "What is the largest mammal in the world?",
-    "options": "a. African Elephant, b. Blue Whale, c. Giraffe, d. Great White Shark",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. African Elephant", "b. Blue Whale", "c. Giraffe", "d. Great White Shark"],
+    "correctAnswers": ["b"],
     "questionID": "105"
   },
   {
     "question": "Which of these countries are members of the European Union?",
-    "options": "a. Norway, b. Switzerland, c. Germany, d. France",
-    "correctAnswers": [
-      "c",
-      "d"
-    ],
+    "options": ["a. Norway", "b. Switzerland", "c. Germany", "d. France"],
+    "correctAnswers": ["c", "d"],
     "questionID": "106"
   },
   {
     "question": "What is the smallest bone in the human body?",
-    "options": "a. Femur, b. Stapes, c. Tibia, d. Ulna",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Femur", "b. Stapes", "c. Tibia", "d. Ulna"],
+    "correctAnswers": ["b"],
     "questionID": "107"
   },
   {
     "question": "Which planet is known as the Red Planet?",
-    "options": "a. Mars, b. Venus, c. Jupiter, d. Saturn",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Mars", "b. Venus", "c. Jupiter", "d. Saturn"],
+    "correctAnswers": ["a"],
     "questionID": "108"
   },
   {
     "question": "What are the primary components of water?",
-    "options": "a. Hydrogen and Oxygen, b. Carbon and Hydrogen, c. Oxygen and Nitrogen, d. Hydrogen and Nitrogen",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Hydrogen and Oxygen", "b. Carbon and Hydrogen", "c. Oxygen and Nitrogen", "d. Hydrogen and Nitrogen"],
+    "correctAnswers": ["a"],
     "questionID": "109"
   },
   {
     "question": "Which of these animals are mammals?",
-    "options": "a. Dolphin, b. Crocodile, c. Eagle, d. Bat",
-    "correctAnswers": [
-      "a",
-      "d"
-    ],
+    "options": ["a. Dolphin", "b. Crocodile", "c. Eagle", "d. Bat"],
+    "correctAnswers": ["a", "d"],
     "questionID": "110"
   },
   {
     "question": "What is the capital of Japan?",
-    "options": "a. Kyoto, b. Osaka, c. Tokyo, d. Hiroshima",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Kyoto", "b. Osaka", "c. Tokyo", "d. Hiroshima"],
+    "correctAnswers": ["c"],
     "questionID": "111"
   },
   {
     "question": "Who is known as the 'Father of Geometry'?",
-    "options": "a. Pythagoras, b. Euclid, c. Archimedes, d. Aristotle",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Pythagoras", "b. Euclid", "c. Archimedes", "d. Aristotle"],
+    "correctAnswers": ["b"],
     "questionID": "112"
   },
   {
     "question": "What is the hardest natural substance on Earth?",
-    "options": "a. Diamond, b. Ruby, c. Quartz, d. Sapphire",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Diamond", "b. Ruby", "c. Quartz", "d. Sapphire"],
+    "correctAnswers": ["a"],
     "questionID": "113"
   },
   {
     "question": "Which of these are noble gases?",
-    "options": "a. Neon, b. Argon, c. Oxygen, d. Nitrogen",
-    "correctAnswers": [
-      "a",
-      "b"
-    ],
+    "options": ["a. Neon", "b. Argon", "c. Oxygen", "d. Nitrogen"],
+    "correctAnswers": ["a", "b"],
     "questionID": "114"
   },
   {
     "question": "What is the capital city of Canada?",
-    "options": "a. Toronto, b. Vancouver, c. Ottawa, d. Montreal",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Toronto", "b. Vancouver", "c. Ottawa", "d. Montreal"],
+    "correctAnswers": ["c"],
     "questionID": "115"
   },
   {
     "question": "Which of these are types of joints in the human body?",
-    "options": "a. Ball-and-socket, b. Hinge, c. Pivot, d. Saddle",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c"
-    ],
+    "options": ["a. Ball-and-socket", "b. Hinge", "c. Pivot", "d. Saddle"],
+    "correctAnswers": ["a", "b", "c"],
     "questionID": "116"
   },
   {
     "question": "What is the main ingredient in traditional bread?",
-    "options": "a. Rice, b. Wheat, c. Corn, d. Oats",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Rice", "b. Wheat", "c. Corn", "d. Oats"],
+    "correctAnswers": ["b"],
     "questionID": "117"
   },
   {
     "question": "Who discovered penicillin?",
-    "options": "a. Alexander Fleming, b. Louis Pasteur, c. Jonas Salk, d. Marie Curie",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Alexander Fleming", "b. Louis Pasteur", "c. Jonas Salk", "d. Marie Curie"],
+    "correctAnswers": ["a"],
     "questionID": "118"
   },
   {
     "question": "Which of these elements is a liquid at room temperature?",
-    "options": "a. Mercury, b. Iron, c. Gold, d. Silver",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Mercury", "b. Iron", "c. Gold", "d. Silver"],
+    "correctAnswers": ["a"],
     "questionID": "119"
   },
   {
     "question": "What are the main colors in the flag of Italy?",
-    "options": "a. Red, White, Green, b. Green, White, Blue, c. Black, Yellow, Red, d. Blue, White, Red",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Red", "b. White", "c. Green", "d. Blue"],
+    "correctAnswers": ["a"],
     "questionID": "120"
   },
   {
     "question": "Who painted the Mona Lisa?",
-    "options": "a. Leonardo da Vinci, b. Vincent Van Gogh, c. Pablo Picasso, d. Rembrandt",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Leonardo da Vinci", "b. Vincent Van Gogh", "c. Pablo Picasso", "d. Rembrandt"],
+    "correctAnswers": ["a"],
     "questionID": "121"
   },
   {
     "question": "What is the chemical formula for water?",
-    "options": "a. H2O, b. CO2, c. NaCl, d. O2",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. H2O", "b. CO2", "c. NaCl", "d. O2"],
+    "correctAnswers": ["a"],
     "questionID": "122"
   },
   {
     "question": "What is the largest organ in the human body?",
-    "options": "a. Heart, b. Liver, c. Skin, d. Brain",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Heart", "b. Liver", "c. Skin", "d. Brain"],
+    "correctAnswers": ["c"],
     "questionID": "123"
   },
   {
     "question": "Which of these elements are noble metals?",
-    "options": "a. Gold, b. Silver, c. Iron, d. Copper",
-    "correctAnswers": [
-      "a",
-      "b"
-    ],
+    "options": ["a. Gold", "b. Silver", "c. Iron", "d. Copper"],
+    "correctAnswers": ["a", "b"],
     "questionID": "124"
   },
   {
     "question": "Who wrote 'Pride and Prejudice'?",
-    "options": "a. Charlotte Brontë, b. Jane Austen, c. Emily Dickinson, d. George Eliot",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Charlotte Brontë", "b. Jane Austen", "c. Emily Dickinson", "d. George Eliot"],
+    "correctAnswers": ["b"],
     "questionID": "125"
   },
   {
     "question": "What is the main gas found in the Earth's atmosphere?",
-    "options": "a. Oxygen, b. Nitrogen, c. Carbon Dioxide, d. Argon",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Oxygen", "b. Nitrogen", "c. Carbon Dioxide", "d. Argon"],
+    "correctAnswers": ["b"],
     "questionID": "126"
   },
   {
     "question": "What are the primary colors in pigment?",
-    "options": "a. Red, Green, Blue, b. Cyan, Magenta, Yellow, c. Red, Yellow, Blue, d. Green, Purple, Orange",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Red", "b. Yellow", "c. Blue"],
+    "correctAnswers": ["c"],
     "questionID": "127"
   },
   {
     "question": "What is the capital of Australia?",
-    "options": "a. Sydney, b. Melbourne, c. Brisbane, d. Canberra",
-    "correctAnswers": [
-      "d"
-    ],
+    "options": ["a. Sydney", "b. Melbourne", "c. Brisbane", "d. Canberra"],
+    "correctAnswers": ["d"],
     "questionID": "128"
   },
   {
     "question": "Which of these is a greenhouse gas?",
-    "options": "a. Nitrogen, b. Oxygen, c. Carbon Dioxide, d. Hydrogen",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Nitrogen", "b. Oxygen", "c. Carbon Dioxide", "d. Hydrogen"],
+    "correctAnswers": ["c"],
     "questionID": "129"
   },
   {
     "question": "Who discovered gravity?",
-    "options": "a. Isaac Newton, b. Albert Einstein, c. Galileo Galilei, d. Nikola Tesla",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Isaac Newton", "b. Albert Einstein", "c. Galileo Galilei", "d. Nikola Tesla"],
+    "correctAnswers": ["a"],
     "questionID": "130"
   },
   {
     "question": "Which of these countries are located in South America?",
-    "options": "a. Brazil, b. Colombia, c. Mexico, d. Spain",
-    "correctAnswers": [
-      "a",
-      "b"
-    ],
+    "options": ["a. Brazil", "b. Colombia", "c. Mexico", "d. Spain"],
+    "correctAnswers": ["a", "b"],
     "questionID": "131"
   },
   {
     "question": "Which of these is not a primary taste?",
-    "options": "a. Sweet, b. Sour, c. Bitter, d. Spicy",
-    "correctAnswers": [
-      "d"
-    ],
+    "options": ["a. Sweet", "b. Sour", "c. Bitter", "d. Spicy"],
+    "correctAnswers": ["d"],
     "questionID": "132"
   },
   {
     "question": "What is the capital city of France?",
-    "options": "a. Lyon, b. Marseille, c. Paris, d. Nice",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Lyon", "b. Marseille", "c. Paris", "d. Nice"],
+    "correctAnswers": ["c"],
     "questionID": "133"
   },
   {
     "question": "Which of these planets is closest to the sun?",
-    "options": "a. Venus, b. Earth, c. Mars, d. Mercury",
-    "correctAnswers": [
-      "d"
-    ],
+    "options": ["a. Venus", "b. Earth", "c. Mars", "d. Mercury"],
+    "correctAnswers": ["d"],
     "questionID": "134"
   },
   {
     "question": "What are the building blocks of proteins?",
-    "options": "a. Fatty acids, b. Nucleotides, c. Amino acids, d. Monosaccharides",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Fatty acids", "b. Nucleotides", "c. Amino acids", "d. Monosaccharides"],
+    "correctAnswers": ["c"],
     "questionID": "135"
   },
   {
     "question": "Which of these countries have a red, white, and blue flag?",
-    "options": "a. France, b. Germany, c. Italy, d. United Kingdom",
-    "correctAnswers": [
-      "a",
-      "d"
-    ],
+    "options": ["a. France", "b. Germany", "c. Italy", "d. United Kingdom"],
+    "correctAnswers": ["a", "d"],
     "questionID": "136"
   },
   {
     "question": "What is the capital of India?",
-    "options": "a. Mumbai, b. Kolkata, c. New Delhi, d. Bangalore",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Mumbai", "b. Kolkata", "c. New Delhi", "d. Bangalore"],
+    "correctAnswers": ["c"],
     "questionID": "137"
   },
   {
     "question": "Which of these are types of clouds?",
-    "options": "a. Cirrus, b. Cumulus, c. Stratus, d. Nimbus",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c"
-    ],
+    "options": ["a. Cirrus", "b. Cumulus", "c. Stratus", "d. Nimbus"],
+    "correctAnswers": ["a", "b", "c"],
     "questionID": "138"
   },
   {
     "question": "Who is known as the 'Father of History'?",
-    "options": "a. Herodotus, b. Plato, c. Aristotle, d. Socrates",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Herodotus", "b. Plato", "c. Aristotle", "d. Socrates"],
+    "correctAnswers": ["a"],
     "questionID": "139"
   },
   {
     "question": "Which of these animals is a reptile?",
-    "options": "a. Frog, b. Salamander, c. Crocodile, d. Penguin",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Frog", "b. Salamander", "c. Crocodile", "d. Penguin"],
+    "correctAnswers": ["c"],
     "questionID": "140"
   },
   {
     "question": "Which gas is most abundant in the Earth's atmosphere?",
-    "options": "a. Oxygen, b. Nitrogen, c. Carbon Dioxide, d. Argon",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Oxygen", "b. Nitrogen", "c. Carbon Dioxide", "d. Argon"],
+    "correctAnswers": ["b"],
     "questionID": "141"
   },
   {
     "question": "Who is the author of '1984'?",
-    "options": "a. George Orwell, b. Aldous Huxley, c. J.R.R. Tolkien, d. Ernest Hemingway",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. George Orwell", "b. Aldous Huxley", "c. J.R.R. Tolkien", "d. Ernest Hemingway"],
+    "correctAnswers": ["a"],
     "questionID": "142"
   },
   {
     "question": "What is the hardest known natural material?",
-    "options": "a. Diamond, b. Ruby, c. Quartz, d. Sapphire",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Diamond", "b. Ruby", "c. Quartz", "d. Sapphire"],
+    "correctAnswers": ["a"],
     "questionID": "143"
   },
   {
     "question": "Which of these are states of matter?",
-    "options": "a. Solid, b. Liquid, c. Gas, d. Plasma",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c",
-      "d"
-    ],
+    "options": ["a. Solid", "b. Liquid", "c. Gas", "d. Plasma"],
+    "correctAnswers": ["a", "b", "c", "d"],
     "questionID": "144"
   },
   {
     "question": "What is the capital city of Italy?",
-    "options": "a. Rome, b. Milan, c. Venice, d. Florence",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Rome", "b. Milan", "c. Venice", "d. Florence"],
+    "correctAnswers": ["a"],
     "questionID": "145"
   },
   {
     "question": "Which planet in our solar system is known for its rings?",
-    "options": "a. Jupiter, b. Saturn, c. Uranus, d. Neptune",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Jupiter", "b. Saturn", "c. Uranus", "d. Neptune"],
+    "correctAnswers": ["b"],
     "questionID": "146"
   },
   {
     "question": "What is the chemical symbol for Sodium?",
-    "options": "a. S, b. N, c. Na, d. So",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. S", "b. N", "c. Na", "d. So"],
+    "correctAnswers": ["c"],
     "questionID": "147"
   },
   {
     "question": "Which of these vitamins is water-soluble?",
-    "options": "a. Vitamin A, b. Vitamin C, c. Vitamin D, d. Vitamin E",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Vitamin A", "b. Vitamin C", "c. Vitamin D", "d. Vitamin E"],
+    "correctAnswers": ["b"],
     "questionID": "148"
   },
   {
     "question": "Who was the first person to walk on the Moon?",
-    "options": "a. Neil Armstrong, b. Buzz Aldrin, c. Yuri Gagarin, d. John Glenn",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Neil Armstrong", "b. Buzz Aldrin", "c. Yuri Gagarin", "d. John Glenn"],
+    "correctAnswers": ["a"],
     "questionID": "149"
   },
   {
     "question": "What are the three primary colors?",
-    "options": "a. Red, Yellow, Blue, b. Green, Orange, Violet, c. Red, Green, Blue, d. Yellow, Cyan, Magenta",
+    "options": ["a. Red, Yellow, Blue", "b. Green, Orange, Violet", "c. Red, Green, Blue", "d. Yellow, Cyan, Magenta"],
     "correctAnswers": [
       "a"
     ],

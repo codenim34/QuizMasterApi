@@ -1,409 +1,295 @@
 [
   {
     "question": "What is the chemical symbol for gold?",
-    "options": "a. Go, b. Gd, c. Gl, d. Au",
-    "correctAnswers": [
-      "d"
-    ],
+    "options": ["a. Go", "b. Gd", "c. Gl", "d. Au"],
+    "correctAnswers": ["d"],
     "questionID": "51"
   },
   {
     "question": "Which of these is the largest planet in our solar system?",
-    "options": "a. Earth, b. Mars, c. Jupiter, d. Venus",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Earth", "b. Mars", "c. Jupiter", "d. Venus"],
+    "correctAnswers": ["c"],
     "questionID": "52"
   },
   {
     "question": "What is the unit of pressure in the International System of Units (SI)?",
-    "options": "a. Pascal, b. Newton, c. Joule, d. Watt",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Pascal", "b. Newton", "c. Joule", "d. Watt"],
+    "correctAnswers": ["a"],
     "questionID": "53"
   },
   {
     "question": "Which of these animals are reptiles?",
-    "options": "a. Frog, b. Turtle, c. Snake, d. Kangaroo",
-    "correctAnswers": [
-      "b",
-      "c"
-    ],
+    "options": ["a. Frog", "b. Turtle", "c. Snake", "d. Kangaroo"],
+    "correctAnswers": ["b", "c"],
     "questionID": "54"
   },
   {
     "question": "What is the freezing point of water in Fahrenheit?",
-    "options": "a. 0°F, b. 100°F, c. 32°F, d. 212°F",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. 0°F", "b. 100°F", "c. 32°F", "d. 212°F"],
+    "correctAnswers": ["c"],
     "questionID": "55"
   },
   {
     "question": "Which of these countries are in South America?",
-    "options": "a. Canada, b. Brazil, c. Russia, d. Egypt",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Canada", "b. Brazil", "c. Russia", "d. Egypt"],
+    "correctAnswers": ["b"],
     "questionID": "56"
   },
   {
     "question": "What is the chemical symbol for carbon?",
-    "options": "a. Co, b. Cr, c. Ca, d. C",
-    "correctAnswers": [
-      "d"
-    ],
+    "options": ["a. Co", "b. Cr", "c. Ca", "d. C"],
+    "correctAnswers": ["d"],
     "questionID": "57"
   },
   {
     "question": "Which of these is a prime number?",
-    "options": "a. 1, b. 5, c. 10, d. 15",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. 1", "b. 5", "c. 10", "d. 15"],
+    "correctAnswers": ["b"],
     "questionID": "58"
   },
   {
     "question": "What is the smallest prime number?",
-    "options": "a. 0, b. 1, c. 2, d. 3",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. 0", "b. 1", "c. 2", "d. 3"],
+    "correctAnswers": ["c"],
     "questionID": "59"
   },
   {
     "question": "Which gas do humans exhale when they breathe out?",
-    "options": "a. Oxygen, b. Carbon dioxide, c. Nitrogen, d. Hydrogen",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Oxygen", "b. Carbon dioxide", "c. Nitrogen", "d. Hydrogen"],
+    "correctAnswers": ["b"],
     "questionID": "60"
   },
   {
     "question": "What is the chemical symbol for sodium?",
-    "options": "a. So, b. Sa, c. Na, d. No",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. So", "b. Sa", "c. Na", "d. No"],
+    "correctAnswers": ["c"],
     "questionID": "61"
   },
   {
     "question": "Which of these are programming languages?",
-    "options": "a. Ruby, b. Potato, c. Perl, d. Banana",
-    "correctAnswers": [
-      "a",
-      "c"
-    ],
+    "options": ["a. Ruby", "b. Potato", "c. Perl", "d. Banana"],
+    "correctAnswers": ["a", "c"],
     "questionID": "62"
   },
   {
     "question": "What is the smallest bone in the human body?",
-    "options": "a. Femur, b. Stapes, c. Tibia, d. Ulna",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Femur", "b. Stapes", "c. Tibia", "d. Ulna"],
+    "correctAnswers": ["b"],
     "questionID": "63"
   },
   {
     "question": "What is the chemical formula for water?",
-    "options": "a. CO2, b. H2O, c. NaCl, d. O2",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. CO2", "b. H2O", "c. NaCl", "d. O2"],
+    "correctAnswers": ["b"],
     "questionID": "64"
   },
   {
     "question": "Which of these countries is landlocked?",
-    "options": "a. Bolivia, b. Brazil, c. Argentina, d. Peru",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Bolivia", "b. Brazil", "c. Argentina", "d. Peru"],
+    "correctAnswers": ["a"],
     "questionID": "65"
   },
   {
     "question": "What is the capital of Japan?",
-    "options": "a. Beijing, b. Seoul, c. Tokyo, d. Shanghai",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Beijing", "b. Seoul", "c. Tokyo", "d. Shanghai"],
+    "correctAnswers": ["c"],
     "questionID": "66"
   },
   {
     "question": "Who wrote 'Romeo and Juliet'?",
-    "options": "a. William Shakespeare, b. Charles Dickens, c. Jane Austen, d. Mark Twain",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. William Shakespeare", "b. Charles Dickens", "c. Jane Austen", "d. Mark Twain"],
+    "correctAnswers": ["a"],
     "questionID": "67"
   },
   {
     "question": "Which of these are greenhouse gases?",
-    "options": "a. Carbon Dioxide, b. Methane, c. Oxygen, d. Nitrogen",
-    "correctAnswers": [
-      "a",
-      "b"
-    ],
+    "options": ["a. Carbon Dioxide", "b. Methane", "c. Oxygen", "d. Nitrogen"],
+    "correctAnswers": ["a", "b"],
     "questionID": "68"
   },
   {
     "question": "What are the primary colors of light?",
-    "options": "a. Red, Green, Blue, b. Red, Yellow, Blue, c. Green, Blue, Yellow, d. Red, Green, Purple",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Red", "Green", "Blue", "b. Red", "Yellow", "Blue", "c. Green", "Blue", "Yellow", "d. Red", "Green", "Purple"],
+    "correctAnswers": ["a"],
     "questionID": "69"
   },
   {
     "question": "Which of these elements are metals?",
-    "options": "a. Helium, b. Iron, c. Oxygen, d. Copper",
-    "correctAnswers": [
-      "b",
-      "d"
-    ],
+    "options": ["a. Helium", "b. Iron", "c. Oxygen", "d. Copper"],
+    "correctAnswers": ["b", "d"],
     "questionID": "70"
   },
   {
     "question": "What is the largest mammal in the world?",
-    "options": "a. African Elephant, b. Blue Whale, c. Giraffe, d. Polar Bear",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. African Elephant", "b. Blue Whale", "c. Giraffe", "d. Polar Bear"],
+    "correctAnswers": ["b"],
     "questionID": "71"
   },
   {
     "question": "Which of these countries are members of the United Nations Security Council?",
-    "options": "a. India, b. China, c. Germany, d. United States",
-    "correctAnswers": [
-      "b",
-      "d"
-    ],
+    "options": ["a. India", "b. China", "c. Germany", "d. United States"],
+    "correctAnswers": ["b", "d"],
     "questionID": "72"
   },
   {
     "question": "What is the capital of Australia?",
-    "options": "a. Sydney, b. Melbourne, c. Canberra, d. Brisbane",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Sydney", "b. Melbourne", "c. Canberra", "d. Brisbane"],
+    "correctAnswers": ["c"],
     "questionID": "73"
   },
   {
     "question": "Which of these are noble metals?",
-    "options": "a. Gold, b. Silver, c. Iron, d. Lead",
-    "correctAnswers": [
-      "a",
-      "b"
-    ],
+    "options": ["a. Gold", "b. Silver", "c. Iron", "d. Lead"],
+    "correctAnswers": ["a", "b"],
     "questionID": "74"
   },
   {
     "question": "What is the main language spoken in Brazil?",
-    "options": "a. Spanish, b. English, c. Portuguese, d. French",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Spanish", "b. English", "c. Portuguese", "d. French"],
+    "correctAnswers": ["c"],
     "questionID": "75"
   },
   {
     "question": "Which planets in our solar system have rings?",
-    "options": "a. Earth and Mars, b. Jupiter and Saturn, c. Venus and Mercury, d. Neptune and Uranus",
-    "correctAnswers": [
-      "b",
-      "d"
-    ],
+    "options": ["a. Earth and Mars", "b. Jupiter and Saturn", "c. Venus and Mercury", "d. Neptune and Uranus"],
+    "correctAnswers": ["b", "d"],
     "questionID": "76"
   },
   {
     "question": "What is the currency of Japan?",
-    "options": "a. Yuan, b. Won, c. Yen, d. Dollar",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Yuan", "b. Won", "c. Yen", "d. Dollar"],
+    "correctAnswers": ["c"],
     "questionID": "77"
   },
   {
     "question": "Which of these vitamins are fat-soluble?",
-    "options": "a. Vitamin A, b. Vitamin C, c. Vitamin D, d. Vitamin K",
-    "correctAnswers": [
-      "a",
-      "c",
-      "d"
-    ],
+    "options": ["a. Vitamin A", "b. Vitamin C", "c. Vitamin D", "d. Vitamin K"],
+    "correctAnswers": ["a", "c", "d"],
     "questionID": "78"
   },
   {
     "question": "What is the capital of Canada?",
-    "options": "a. Vancouver, b. Toronto, c. Ottawa, d. Montreal",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Vancouver", "b. Toronto", "c. Ottawa", "d. Montreal"],
+    "correctAnswers": ["c"],
     "questionID": "79"
   },
   {
     "question": "Which of these organs are part of the human respiratory system?",
-    "options": "a. Heart, b. Lungs, c. Liver, d. Trachea",
-    "correctAnswers": [
-      "b",
-      "d"
-    ],
+    "options": ["a. Heart", "b. Lungs", "c. Liver", "d. Trachea"],
+    "correctAnswers": ["b", "d"],
     "questionID": "80"
   },
   {
     "question": "Who is known as the father of modern physics?",
-    "options": "a. Isaac Newton, b. Albert Einstein, c. Galileo Galilei, d. Nikola Tesla",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Isaac Newton", "b. Albert Einstein", "c. Galileo Galilei", "d. Nikola Tesla"],
+    "correctAnswers": ["b"],
     "questionID": "81"
   },
   {
     "question": "Which of these are layers of the Earth's atmosphere?",
-    "options": "a. Troposphere, b. Mesosphere, c. Stratosphere, d. Ionosphere",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c"
-    ],
+    "options": ["a. Troposphere", "b. Mesosphere", "c. Stratosphere", "d. Ionosphere"],
+    "correctAnswers": ["a", "b", "c"],
     "questionID": "82"
   },
   {
     "question": "Who is known as the father of modern computer science?",
-    "options": "a. Charles Babbage, b. Alan Turing, c. John von Neumann, d. Steve Jobs",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Charles Babbage", "b. Alan Turing", "c. John von Neumann", "d. Steve Jobs"],
+    "correctAnswers": ["b"],
     "questionID": "83"
   },
   {
     "question": "What is the primary source of energy for Earth?",
-    "options": "a. The Moon, b. Wind, c. The Sun, d. Fossil Fuels",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. The Moon", "b. Wind", "c. The Sun", "d. Fossil Fuels"],
+    "correctAnswers": ["c"],
     "questionID": "84"
   },
   {
     "question": "Which of these elements are halogens?",
-    "options": "a. Fluorine, b. Bromine, c. Nitrogen, d. Oxygen",
-    "correctAnswers": [
-      "a",
-      "b"
-    ],
+    "options": ["a. Fluorine", "b. Bromine", "c. Nitrogen", "d. Oxygen"],
+    "correctAnswers": ["a", "b"],
     "questionID": "85"
   },
   {
     "question": "What is the capital city of Egypt?",
-    "options": "a. Cairo, b. Alexandria, c. Giza, d. Luxor",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Cairo", "b. Alexandria", "c. Giza", "d. Luxor"],
+    "correctAnswers": ["a"],
     "questionID": "86"
   },
   {
     "question": "Which of these is the largest planet in our Solar System?",
-    "options": "a. Earth, b. Jupiter, c. Saturn, d. Mars",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. Earth", "b. Jupiter", "c. Saturn", "d. Mars"],
+    "correctAnswers": ["b"],
     "questionID": "87"
   },
   {
     "question": "What are the three states of matter?",
-    "options": "a. Solid, Liquid, Gas, b. Solid, Gas, Plasma, c. Liquid, Gas, Plasma, d. Solid, Liquid, Vapor",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Solid", "Liquid", "Gas", "b. Solid", "Gas", "Plasma", "c. Liquid", "Gas", "Plasma", "d. Solid", "Liquid", "Vapor"],
+    "correctAnswers": ["a"],
     "questionID": "88"
   },
   {
     "question": "Which of these are types of blood cells?",
-    "options": "a. Red blood cells, b. White blood cells, c. Platelets, d. Plasma cells",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c"
-    ],
+    "options": ["a. Red blood cells", "b. White blood cells", "c. Platelets", "d. Plasma cells"],
+    "correctAnswers": ["a", "b", "c"],
     "questionID": "89"
   },
   {
     "question": "What is the capital of Russia?",
-    "options": "a. St. Petersburg, b. Moscow, c. Vladivostok, d. Sochi",
-    "correctAnswers": [
-      "b"
-    ],
+    "options": ["a. St. Petersburg", "b. Moscow", "c. Vladivostok", "d. Sochi"],
+    "correctAnswers": ["b"],
     "questionID": "90"
   },
   {
     "question": "Which of these are layers of the Earth?",
-    "options": "a. Crust, b. Mantle, c. Core, d. Atmosphere",
-    "correctAnswers": [
-      "a",
-      "b",
-      "c"
-    ],
+    "options": ["a. Crust", "b. Mantle", "c. Core", "d. Atmosphere"],
+    "correctAnswers": ["a", "b", "c"],
     "questionID": "91"
   },
   {
     "question": "What is the name of the galaxy that contains our Solar System?",
-    "options": "a. Andromeda, b. Whirlpool, c. Milky Way, d. Triangulum",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Andromeda", "b. Whirlpool", "c. Milky Way", "d. Triangulum"],
+    "correctAnswers": ["c"],
     "questionID": "92"
   },
   {
     "question": "Which of these rivers is the longest?",
-    "options": "a. Nile, b. Amazon, c. Yangtze, d. Mississippi",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Nile", "b. Amazon", "c. Yangtze", "d. Mississippi"],
+    "correctAnswers": ["a"],
     "questionID": "93"
   },
   {
     "question": "Which of these languages is primarily spoken in Spain?",
-    "options": "a. Portuguese, b. Catalan, c. Spanish, d. Basque",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Portuguese", "b. Catalan", "c. Spanish", "d. Basque"],
+    "correctAnswers": ["c"],
     "questionID": "94"
   },
   {
     "question": "What is the process by which plants make their food?",
-    "options": "a. Photosynthesis, b. Respiration, c. Fermentation, d. Osmosis",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Photosynthesis", "b. Respiration", "c. Fermentation", "d. Osmosis"],
+    "correctAnswers": ["a"],
     "questionID": "95"
   },
   {
     "question": "Which of these countries are in the African continent?",
-    "options": "a. Egypt, b. India, c. Australia, d. Nigeria",
-    "correctAnswers": [
-      "a",
-      "d"
-    ],
+    "options": ["a. Egypt", "b. India", "c. Australia", "d. Nigeria"],
+    "correctAnswers": ["a", "d"],
     "questionID": "96"
   },
   {
     "question": "What is the term for a baby kangaroo?",
-    "options": "a. Calf, b. Pup, c. Joey, d. Kitten",
-    "correctAnswers": [
-      "c"
-    ],
+    "options": ["a. Calf", "b. Pup", "c. Joey", "d. Kitten"],
+    "correctAnswers": ["c"],
     "questionID": "97"
   },
   {
     "question": "Which of these is a renewable energy source?",
-    "options": "a. Solar Energy, b. Natural Gas, c. Coal, d. Nuclear Energy",
-    "correctAnswers": [
-      "a"
-    ],
+    "options": ["a. Solar Energy", "b. Natural Gas", "c. Coal", "d. Nuclear Energy"],
+    "correctAnswers": ["a"],
     "questionID": "98"
   },
   {
     "question": "What is the capital of Brazil?",
-    "options": "a. Rio de Janeiro, b. São Paulo, c. Brasília, d. Salvador",
+    "options": ["a. Rio de Janeiro", "b. São Paulo", "c. Brasília", "d. Salvador"],
     "correctAnswers": [
       "c"
     ],
@@ -411,7 +297,7 @@
   },
   {
     "question": "Which of these are major components of the Earth's atmosphere?",
-    "options": "a. Nitrogen, b. Oxygen, c. Carbon Dioxide, d. Argon",
+    "options": ["a. Nitrogen", "b. Oxygen", "c. Carbon Dioxide", "d. Argon"],
     "correctAnswers": [
       "a",
       "b",
