@@ -55,6 +55,7 @@ const server = http.createServer((req, res) => {
         if (result) {
           const { user, accessToken } = result;
           delete user.password;
+          delete user.accessToken;
           userView.sendLogInSuccessResponse(res, "Login successful", {
             user,
             access_token: accessToken,

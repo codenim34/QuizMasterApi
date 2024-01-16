@@ -80,5 +80,26 @@
     "password": "tbOLQ8:<>@",
     "studentID": "21003456",
     "accessToken": "$$@#tamim_iqbal4%%56tbOLQ8:<>@789&&"
+  },
+  {
+    "name": "Lionel Messi",
+    "username": "Lionel10",
+    "password": "16;;;:99:<@",
+    "studentID": "210042164",
+    "accessToken": "$$@#Lionel104%%5616;;;:99:<@789&&"
+  },
+  {
+    "name": "HR ALIF",
+    "username": "alif123",
+    "password": "acegiktit;?",
+    "studentID": "210042107",
+    "accessToken": "$$@#alif1234%%56acegiktit;?789&&"
+  },
+  {
+    "name": "HR ALIF12",
+    "username": "alif12345",
+    "password": "acegiktit;?ACE",
+    "studentID": "210042107",
+    "accessToken": "$$@#alif123454%%56acegiktit;?ACE789&&"
   }
 ]
