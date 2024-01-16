@@ -6,7 +6,7 @@ Welcome to the QuizMasterAPI, a simple Node.js-based quiz application that allow
 
 ## Project Context
 
-This project is developed by our team for the Software Project Lab (SWE 4304) during the 3rd semester at the Islamic University of Technology. It represents one of the initial projects undertaken by our team during the early stages of our academic journey.
+This project is developed by our team, [XtraDrill](#developers), for the Software Project Lab (SWE 4304) during the 3rd semester at the Islamic University of Technology. It represents one of the initial projects undertaken by our team during the early stages of our academic journey.
 
 ## Table of Contents
 
