@@ -43,6 +43,7 @@ class Quiz {
 }
 
 const addQuiz = ( question, options, correctAnswers) => {
+    
     const quizzes = loadQuizzes();
 
     // Generate a unique questionID by adding 1 to the maximum existing questionID
@@ -55,8 +56,11 @@ const addQuiz = ( question, options, correctAnswers) => {
     return quiz;
 };
 const addSubQuiz = ( question, options, correctAnswers,subject) => {
+    validateQuiz(question, options, correctAnswers);
+
     const quizzes = loadQuizzes();
     const subjectQuizzes = loadSubjectQuizzes(subject);
+
     // Generate a unique questionID by adding 1 to the maximum existing questionID
     const maxQuestionID = Math.max(...quizzes.map(quiz => parseInt(quiz.questionID) || 0));
     const newQuestionID = (maxQuestionID + 1).toString();
@@ -64,11 +68,23 @@ const addSubQuiz = ( question, options, correctAnswers,subject) => {
     const quiz = new Quiz(question, options, correctAnswers, newQuestionID);
     quizzes.push(quiz);
     saveQuizzes(quizzes);
+
     subjectQuizzes.push(quiz);
     saveSubjectQuizzes(subjectQuizzes,subject);
+    
     return quiz;
 };
 
+const validateQuiz = (question, options, correctAnswers) => {
+    //console.log(correctAnswers.length);
+    //console.log(correctAnswers);
+
+    correctAnswers.forEach((answer) => {
+        if (answer.length === 0) {
+            throw new Error("Invalid data: Correct Answer doesn't contain valid options");
+        }
+    });
+};    
 
 const takeQuiz = (userResponses) => {
     const quizzes = loadQuizzes();

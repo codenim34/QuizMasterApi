@@ -148,7 +148,7 @@ const server = http.createServer((req, res) => {
           );
         } catch (error) {
           console.error(error);
-          quizView.sendErrorResponse(res, 400, "Invalid data");
+          quizView.sendErrorResponse(res, 400, error.message);
         }
       });
     });
