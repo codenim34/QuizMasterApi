@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       try {
         const registeredUser = userController.registerUser(data);
-
+        delete registeredUser.accessToken;
         userView.sendSuccessResponse(
             res,
             "User registered successfully",
@@ -79,6 +79,7 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       try {
         const registeredAdmin = adminController.registerAdmin(data);
+        delete registeredAdmin.accessToken;
         adminView.sendSuccessResponse(
             res,
             "Admin registered successfully",

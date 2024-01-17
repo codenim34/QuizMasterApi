@@ -101,5 +101,26 @@
     "password": "acegiktit;?ACE",
     "studentID": "210042107",
     "accessToken": "$$@#alif123454%%56acegiktit;?ACE789&&"
+  },
+  {
+    "name": "HR ALIF12",
+    "username": "alif1235665",
+    "password": "acegiktit;?ACECG",
+    "studentID": "210042107",
+    "accessToken": "$$@#alif12356654%%56acegiktit;?ACECG789&&"
+  },
+  {
+    "name": "HR ALIF12",
+    "username": "imtiaz12356667",
+    "password": "acegiktit;?ACECG",
+    "studentID": "210042107",
+    "accessToken": "$$@#imtiaz123566674%%56acegiktit;?ACECG789&&"
+  },
+  {
+    "name": "imtiazRisat",
+    "username": "imtiaz123",
+    "password": "acegiktit;?ACECG",
+    "studentID": "210042107",
+    "accessToken": "$$@#imtiaz1234%%56acegiktit;?ACECG789&&"
   }
 ]
