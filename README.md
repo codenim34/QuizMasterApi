@@ -16,8 +16,7 @@ This project is developed by our team, [XtraDrill](#developers), for the Softwar
     - [User Operations](#user-operations)
     - [Admin Operations](#admin-operations)
 4. [Endpoints](#endpoints)
-5. [GitHub Repository](#github-repository)
-6. [Developers](#developers)
+5. [Developers](#developers)
 
 ## Project Structure
 
@@ -32,59 +31,86 @@ The QuizMasterAPI adopts the **Model-View-Controller (MVC) design pattern**, a w
 #### The QuizMasterAPI project is organized as follows:
 
 - **Model:**
-  - adminModel.js
-  - quizModel.js
-  - userModel.js
+  - adminModel.js, quizModel.js, userModel.js
 
 - **View:**
-  - adminView.js
-  - quizView.js
-  - userView.js
+  - adminView.js, quizView.js, userView.js
 
 - **Controller:**
-  - adminController.js
-  - userController.js
+  - adminController.js, userController.js
 
 - **Database:**
-  - admins.json
-  - chemistry.json
-  - english.json
-  - leaderboard.json
-  - math.json
-  - mistakes.json
-  - physics.json
-  - quiz.json
-  - users.json
+  - admins.json, users.json, chemistry.json, english.json, math.json, physics.json, quiz.json, leaderboard.json, mistakes.json
+
 
 - **Others:**
-  - node_modules (dependencies folder)
-  - package-lock.json
-  - package.json
-  - server.js
+  - node_modules (dependencies folder), package-lock.json, package.json, server.js
 
-## Installation
+## Installation and How To Use QuizMasterAPI
 
-To run the QuizMasterAPI on your local machine, follow these steps:
+### Prerequisites:
 
-1. Ensure you have Node.js installed. If not, download and install it from [https://nodejs.org/](https://nodejs.org/).
+Before you begin, make sure you have the following installed on your machine:
 
-2. Clone the GitHub repository to your local machine.
+1. **Node.js:** The QuizMasterAPI is built using Node.js. Download and install it from [https://nodejs.org/](https://nodejs.org/).
 
-    ```bash
-    git clone https://github.com/codenim34/QuizMasterApi.git
-    ```
+2. **Git:** You'll need Git to clone the repository. Install it from [https://git-scm.com/](https://git-scm.com/).
 
-3. Navigate to the project directory.
+### Installation Steps:
 
-    ```bash
-    cd QuizMasterApi
-    ```
+#### 1. Clone the GitHub repository:
 
-4. Install the project dependencies.
+Open your terminal (Command Prompt, PowerShell, or Terminal) and run the following command to clone the repository to your local machine:
 
-    ```bash
-    npm install
-    ```
+```bash
+git clone https://github.com/codenim34/QuizMasterApi.git
+```
+
+#### 2. Navigate to the project directory:
+
+Move into the project directory using the `cd` command:
+
+```bash
+cd QuizMasterApi
+```
+
+#### 3. Install project dependencies:
+
+Use npm (Node Package Manager) to install the required dependencies:
+
+```bash
+npm install
+```
+
+### Running the QuizMasterAPI:
+
+#### 1. Start the server:
+
+Run the following command to start the QuizMasterAPI server:
+
+```bash
+npm start
+```
+
+This command will launch the server, and you should see output indicating that the server is running.
+
+#### 2. Access the API:
+
+You can access the API at `http://localhost:3000` by default. Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to interact with the QuizMasterAPI.
+
+### Recommended IDEs:
+
+While you can use any text editor for working with Node.js projects, here are some popular Integrated Development Environments (IDEs) that you might find useful:
+
+1. **Visual Studio Code (VSCode):** Download and install from [https://code.visualstudio.com/](https://code.visualstudio.com/).
+
+2. **Atom:** Download and install from [https://atom.io/](https://atom.io/).
+
+3. **WebStorm:** A powerful IDE for JavaScript, you can find it at [https://www.jetbrains.com/webstorm/](https://www.jetbrains.com/webstorm/).
+
+
+
+
 
 ## Usage
 
@@ -153,9 +179,6 @@ To view the leaderboard, send a GET request to `/leaderboard`.
     - `POST /admin/addQuiz/{subject}`: Add a quiz for a specific subject.
     - `GET /leaderboard`: View the leaderboard.
 
-## GitHub Repository
-
-The QuizMasterAPI GitHub repository can be found at [https://github.com/codenim34/QuizMasterApi.git](https://github.com/codenim34/QuizMasterApi.git).
 
 ## Developers
 
