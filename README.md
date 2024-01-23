@@ -108,7 +108,9 @@ While you can use any text editor for working with Node.js projects, here are so
 
 3. **WebStorm:** A powerful IDE for JavaScript, you can find it at [https://www.jetbrains.com/webstorm/](https://www.jetbrains.com/webstorm/).
 
+### API Testing:
 
+You can test the endpoints with this Postman Collection: [QuizMasterAPI-Postman-Collection](https://www.postman.com/xtradrill/workspace/xtradrill-workspace/collection/28299228-c896b7bc-aea8-44e3-a466-708cf9991eae).
 
 
 
